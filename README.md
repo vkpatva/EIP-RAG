@@ -155,30 +155,58 @@ with no words in common — that is what makes retrieval work on paraphrase.
 10 negative controls that no document in the corpus answers. `npm run eval`
 scores hit@k after collapsing several chunks from one document into one result.
 
-| Metric | OpenAI `text-embedding-3-small` |
-|---|---|
-| hit@1 | 37/50 · 74% |
-| hit@3 | 44/50 · 88% |
-| hit@5 | 46/50 · 92% |
+| Metric | OpenAI `text-embedding-3-small` (1536d) | Voyage `voyage-3` (1024d) |
+|---|---|---|
+| hit@1 | 37/50 · 74% | **42/50 · 84%** |
+| hit@3 | 44/50 · 88% | **48/50 · 96%** |
+| hit@5 | 46/50 · 92% | **48/50 · 96%** |
+| all docs found on multi-answer questions | 7/11 · 64% | **9/11 · 82%** |
 
-By question type (hit@1 / hit@5):
+By question type (hit@1):
 
-| Type | n | hit@1 | hit@5 |
+| Type | n | OpenAI | Voyage |
 |---|--:|--:|--:|
 | natural | 6 | 100% | 100% |
-| technical | 14 | 93% | 93% |
-| comparison | 11 | 82% | 100% |
-| product | 14 | 50% | 86% |
-| indirect | 5 | 40% | 80% |
+| technical | 14 | 93% | **100%** |
+| comparison | 11 | 82% | **91%** |
+| product | 14 | 50% | **64%** |
+| indirect | 5 | 40% | **60%** |
+
+Voyage leads on every type. Head to head on the 50 positive questions it wins 6
+that OpenAI misses and loses 1, which is a real difference rather than noise —
+plausibly because it is asymmetric and encodes the query side differently from
+the corpus side. Its scores are uniformly lower, which means nothing: each model
+calibrates its own range, so only hit rates compare across columns.
 
 Questions phrased in spec vocabulary do best; questions phrased as a product
 goal ("I want users to...") do worst, because the gap between how a user asks
 and how a spec is written is exactly the gap the embedding has to bridge.
 
-Negative controls: mean top score 0.411 vs 0.529 for answerable questions, with
-one at 0.612 ("How do I write a Solidity function that transfers tokens?" →
-`erc-20`). Scores separate on average but overlap individually, so an absolute
-score threshold is not a reliable "I don't know" signal.
+Both models miss the same document, `erc-2771` — OpenAI on 4 questions, Voyage
+on 2. See Limitations.
+
+### Negative controls
+
+Ten questions no document in the corpus answers ("How does Ethereum mining
+work?", "How can I reduce my JavaScript bundle size?"). There is no right
+answer; what is measured is whether confidence stays low.
+
+| | OpenAI | Voyage |
+|---|---|---|
+| mean top score, answerable | 0.529 | 0.519 |
+| mean top score, unanswerable | 0.411 | 0.419 |
+| highest unanswerable | 0.612 | 0.668 |
+
+Scores separate on average but overlap badly per question. On both models the
+worst case is "How do I write a Solidity function that transfers tokens?"
+scoring against `erc-20` *above* the median answerable question. A fixed score
+threshold is therefore not a usable "I don't know" signal.
+
+Of the two summary numbers the eval reports, `topScore` (the best chunk's
+similarity) is the better one: only 1 of 10 negatives exceeds the positive
+median, on both models. `spread` (top score minus 5th) is much weaker —
+5 of 10 for OpenAI, 2 of 10 for Voyage — so it should not be used as a
+confidence signal. Calibration, not accuracy, is this pipeline's weak point.
 
 ## Design notes
 
@@ -258,8 +286,9 @@ re-checking after any splitter change.
   where each half alone scored 0.534 and 0.417. Query decomposition belongs in the
   retrieval stage, not the embedder.
 - **Small documents under-retrieve.** Chunk count correlates with hit@1 at +0.41.
-  `erc-2771` (14 chunks) accounts for 3 of the 4 eval misses, losing to `erc-4337`
-  (69 chunks) on every "someone else pays the fee" phrasing. But size is not
+  `erc-2771` (14 chunks) accounts for every miss on both models — 3 of OpenAI's 4
+  and both of Voyage's 2 — losing to `erc-4337` (69 chunks) on every "someone else
+  pays the fee" phrasing. But size is not
   destiny: `erc-1271` scores 7/7 on 13 chunks, because its questions use its own
   vocabulary. `erc-55` (5 chunks, 4 of them raw code) has almost no prose to match.
 - Batches run sequentially and batch size counts texts, not tokens. Voyage's real
