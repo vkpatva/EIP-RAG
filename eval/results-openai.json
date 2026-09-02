@@ -1,0 +1,1441 @@
+{
+  "model": "text-embedding-3-small",
+  "dimensions": 1536,
+  "results": [
+    {
+      "id": "q01",
+      "q": "I'm building a game where players can buy coins and spend them on items. How should I represent the coins?",
+      "expect": [
+        "erc-20"
+      ],
+      "standards": [
+        "EIP-20"
+      ],
+      "difficulty": "easy",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-1155",
+        "erc-721",
+        "erc-2771",
+        "erc-20"
+      ],
+      "topScore": 0.3991574052689669,
+      "spread": 0.013583613597471733,
+      "hit1": false,
+      "hit3": false,
+      "hit5": true
+    },
+    {
+      "id": "q02",
+      "q": "I want every sword in my game to be a unique item that belongs to one player and can be sold to another.",
+      "expect": [
+        "erc-721"
+      ],
+      "standards": [
+        "EIP-721"
+      ],
+      "difficulty": "easy",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-1155",
+        "erc-721",
+        "erc-2771",
+        "erc-4337",
+        "erc-1271"
+      ],
+      "topScore": 0.3004110566787366,
+      "spread": 0.03285561360704692,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q03",
+      "q": "My game has gold, health potions, bullets, and rare weapons. Some items are identical and others are unique. How should I represent them?",
+      "expect": [
+        "erc-1155"
+      ],
+      "standards": [
+        "EIP-1155"
+      ],
+      "difficulty": "medium",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-1155",
+        "erc-721"
+      ],
+      "topScore": 0.3905478942844027,
+      "spread": 0.058140346135971854,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q04",
+      "q": "Why do some Ethereum addresses contain both uppercase and lowercase letters?",
+      "expect": [
+        "erc-55"
+      ],
+      "standards": [
+        "EIP-55"
+      ],
+      "difficulty": "easy",
+      "type": "natural",
+      "covered": 1,
+      "ranked": [
+        "erc-55",
+        "erc-721",
+        "eip-1",
+        "eip-7702",
+        "eip-712"
+      ],
+      "topScore": 0.508341404606324,
+      "spread": 0.10908173549618189,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q05",
+      "q": "I want to make sure a user hasn't accidentally typed an invalid Ethereum address before sending money.",
+      "expect": [
+        "erc-55"
+      ],
+      "standards": [
+        "EIP-55"
+      ],
+      "difficulty": "easy",
+      "type": "product",
+      "covered": 0,
+      "ranked": [
+        "erc-2771",
+        "eip-1559",
+        "erc-1271",
+        "erc-4337",
+        "eip-712"
+      ],
+      "topScore": 0.4703240763223951,
+      "spread": 0.0693948060164869,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q06",
+      "q": "Why does sending a transaction sometimes involve a base fee and another amount paid to the block producer?",
+      "expect": [
+        "eip-1559"
+      ],
+      "standards": [
+        "EIP-1559"
+      ],
+      "difficulty": "medium",
+      "type": "natural",
+      "covered": 1,
+      "ranked": [
+        "eip-1559",
+        "erc-4337"
+      ],
+      "topScore": 0.5802509997485209,
+      "spread": 0.03655606686687363,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q07",
+      "q": "How does Ethereum decide how much of a transaction fee is burned and how much goes to the validator?",
+      "expect": [
+        "eip-1559"
+      ],
+      "standards": [
+        "EIP-1559"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "eip-1559",
+        "eip-7702",
+        "erc-4337",
+        "erc-1155"
+      ],
+      "topScore": 0.6226576713043231,
+      "spread": 0.1032641451744668,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q08",
+      "q": "I want users to sign an agreement, but I want the wallet to clearly show what they are agreeing to instead of displaying unreadable data.",
+      "expect": [
+        "eip-712"
+      ],
+      "standards": [
+        "EIP-712"
+      ],
+      "difficulty": "medium",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "eip-712",
+        "erc-1271",
+        "eip-7702",
+        "erc-4337",
+        "erc-721"
+      ],
+      "topScore": 0.5186045345715623,
+      "spread": 0.08437386680098247,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q09",
+      "q": "How can I create a human-readable signing request for something like 'buy this item for 5 tokens'?",
+      "expect": [
+        "eip-712"
+      ],
+      "standards": [
+        "EIP-712"
+      ],
+      "difficulty": "medium",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "eip-712",
+        "erc-1271",
+        "erc-20",
+        "erc-1155",
+        "erc-2771"
+      ],
+      "topScore": 0.473381163971165,
+      "spread": 0.03320799129194191,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q10",
+      "q": "My application needs to know whether another contract supports a particular feature before calling it. How can it check?",
+      "expect": [
+        "erc-165"
+      ],
+      "standards": [
+        "EIP-165"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-165",
+        "erc-721",
+        "erc-2771",
+        "erc-1155",
+        "erc-1271"
+      ],
+      "topScore": 0.5625014233885377,
+      "spread": 0.08709346845267357,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q11",
+      "q": "I have a contract address, but I don't know what kind of functionality it supports. Is there a standard way to find out?",
+      "expect": [
+        "erc-165"
+      ],
+      "standards": [
+        "EIP-165"
+      ],
+      "difficulty": "medium",
+      "type": "natural",
+      "covered": 1,
+      "ranked": [
+        "erc-165",
+        "erc-1271",
+        "erc-721",
+        "eip-712",
+        "erc-1155"
+      ],
+      "topScore": 0.5391624706640734,
+      "spread": 0.05133100010303415,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q12",
+      "q": "I want users to interact with my application without having to hold the network's native currency just to pay transaction fees.",
+      "expect": [
+        "erc-4337",
+        "erc-2771"
+      ],
+      "standards": [
+        "EIP-4337",
+        "EIP-2771"
+      ],
+      "difficulty": "medium",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-4337",
+        "eip-1559",
+        "eip-7702",
+        "erc-20",
+        "erc-1155"
+      ],
+      "topScore": 0.46766202349501995,
+      "spread": 0.03512701359426651,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q13",
+      "q": "Can someone else pay the network fee for my users while the users still approve the action?",
+      "expect": [
+        "erc-2771"
+      ],
+      "standards": [
+        "EIP-2771"
+      ],
+      "difficulty": "medium",
+      "type": "product",
+      "covered": 0,
+      "ranked": [
+        "erc-4337",
+        "eip-1559",
+        "eip-7702",
+        "erc-1155"
+      ],
+      "topScore": 0.4469405309139394,
+      "spread": 0.02204402634303837,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q14",
+      "q": "I want my application to let users perform several actions without requiring them to manage a traditional wallet account in the usual way.",
+      "expect": [
+        "erc-4337"
+      ],
+      "standards": [
+        "EIP-4337"
+      ],
+      "difficulty": "hard",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "eip-7702",
+        "erc-4337",
+        "erc-1271",
+        "erc-20",
+        "eip-712"
+      ],
+      "topScore": 0.532805014631648,
+      "spread": 0.10031676617862839,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q15",
+      "q": "Can a smart contract approve a signature even though it doesn't have a private key like a normal wallet?",
+      "expect": [
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-1271"
+      ],
+      "difficulty": "medium",
+      "type": "natural",
+      "covered": 1,
+      "ranked": [
+        "erc-1271",
+        "erc-4337",
+        "eip-7702",
+        "erc-20",
+        "eip-712"
+      ],
+      "topScore": 0.5573509807894581,
+      "spread": 0.0767798904524245,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q16",
+      "q": "How can a marketplace verify a signed message when the person signing it is actually a smart contract?",
+      "expect": [
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-1271"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-1271",
+        "eip-712",
+        "erc-4337",
+        "erc-165",
+        "erc-2771"
+      ],
+      "topScore": 0.610113938582826,
+      "spread": 0.0925544385010656,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q17",
+      "q": "I want a normal Ethereum account to temporarily gain some smart-contract-like abilities without permanently turning it into a contract.",
+      "expect": [
+        "eip-7702"
+      ],
+      "standards": [
+        "EIP-7702"
+      ],
+      "difficulty": "medium",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-4337",
+        "eip-7702",
+        "erc-2771",
+        "erc-1271",
+        "erc-721"
+      ],
+      "topScore": 0.5298165828933719,
+      "spread": 0.06406259578583734,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q18",
+      "q": "Can an existing wallet account temporarily use code to perform more advanced operations?",
+      "expect": [
+        "eip-7702"
+      ],
+      "standards": [
+        "EIP-7702"
+      ],
+      "difficulty": "medium",
+      "type": "natural",
+      "covered": 1,
+      "ranked": [
+        "eip-7702",
+        "erc-4337"
+      ],
+      "topScore": 0.5286298799709175,
+      "spread": 0.04399550155238929,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q19",
+      "q": "Who decides how Ethereum standards are proposed, discussed, reviewed, and accepted?",
+      "expect": [
+        "eip-1"
+      ],
+      "standards": [
+        "EIP-1"
+      ],
+      "difficulty": "easy",
+      "type": "natural",
+      "covered": 1,
+      "ranked": [
+        "eip-1",
+        "erc-721",
+        "erc-20",
+        "erc-1155"
+      ],
+      "topScore": 0.5682186179033433,
+      "spread": 0.0495401557980123,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q20",
+      "q": "I have an idea for changing Ethereum. Where do I propose it and how does it become an accepted standard?",
+      "expect": [
+        "eip-1"
+      ],
+      "standards": [
+        "EIP-1"
+      ],
+      "difficulty": "easy",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "eip-1",
+        "erc-20",
+        "erc-1155",
+        "erc-721",
+        "eip-7702"
+      ],
+      "topScore": 0.5798754094665702,
+      "spread": 0.05815764302125093,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q21",
+      "q": "I don't want my users to worry about buying the network's native coin before they can use my application. What options do I have?",
+      "expect": [
+        "erc-4337",
+        "erc-2771"
+      ],
+      "standards": [
+        "EIP-4337",
+        "EIP-2771"
+      ],
+      "difficulty": "medium",
+      "type": "indirect",
+      "covered": 1,
+      "ranked": [
+        "erc-20",
+        "eip-7702",
+        "eip-1559",
+        "erc-721",
+        "erc-4337"
+      ],
+      "topScore": 0.4078401356679305,
+      "spread": 0.053088528994049033,
+      "hit1": false,
+      "hit3": false,
+      "hit5": true
+    },
+    {
+      "id": "q22",
+      "q": "I want someone to be able to submit an action for another user, as long as the user has already approved that action.",
+      "expect": [
+        "erc-2771"
+      ],
+      "standards": [
+        "EIP-2771"
+      ],
+      "difficulty": "medium",
+      "type": "indirect",
+      "covered": 0,
+      "ranked": [
+        "erc-1155",
+        "erc-20",
+        "erc-4337",
+        "eip-7702",
+        "erc-721"
+      ],
+      "topScore": 0.44075084459871616,
+      "spread": 0.08623548123564939,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q23",
+      "q": "My users keep getting confused by long strings of random-looking data when signing things. How can I make signing safer and easier to understand?",
+      "expect": [
+        "eip-712"
+      ],
+      "standards": [
+        "EIP-712"
+      ],
+      "difficulty": "medium",
+      "type": "indirect",
+      "covered": 1,
+      "ranked": [
+        "eip-712",
+        "erc-1271",
+        "eip-7702",
+        "erc-4337",
+        "erc-55"
+      ],
+      "topScore": 0.6138099513050908,
+      "spread": 0.17228018362437242,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q24",
+      "q": "I need to tell whether a digital asset is one-of-a-kind or whether many copies of the same asset can exist. Which standards support these models?",
+      "expect": [
+        "erc-721",
+        "erc-1155"
+      ],
+      "standards": [
+        "EIP-721",
+        "EIP-1155"
+      ],
+      "difficulty": "hard",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "erc-721",
+        "erc-1155"
+      ],
+      "topScore": 0.5834742848663865,
+      "spread": 0.09664483874271834,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q25",
+      "q": "I want to create a collection of digital characters where each character can have its own picture, name, and owner.",
+      "expect": [
+        "erc-721"
+      ],
+      "standards": [
+        "EIP-721"
+      ],
+      "difficulty": "easy",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-721",
+        "erc-1155",
+        "eip-712"
+      ],
+      "topScore": 0.38683114254076706,
+      "spread": 0.05859973773881444,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q26",
+      "q": "I need a system for game resources where one player might own 50 potions, 10 shields, and one rare character.",
+      "expect": [
+        "erc-1155",
+        "erc-721"
+      ],
+      "standards": [
+        "EIP-1155",
+        "EIP-721"
+      ],
+      "difficulty": "hard",
+      "type": "product",
+      "covered": 2,
+      "ranked": [
+        "erc-1155",
+        "erc-721",
+        "erc-4337",
+        "eip-1559",
+        "eip-7702"
+      ],
+      "topScore": 0.35901350292852785,
+      "spread": 0.03562960776737806,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q27",
+      "q": "A user pasted an Ethereum address into my application. How can I detect likely typing mistakes?",
+      "expect": [
+        "erc-55"
+      ],
+      "standards": [
+        "EIP-55"
+      ],
+      "difficulty": "easy",
+      "type": "product",
+      "covered": 1,
+      "ranked": [
+        "erc-2771",
+        "erc-55",
+        "eip-712",
+        "eip-1",
+        "erc-4337"
+      ],
+      "topScore": 0.4094344022224985,
+      "spread": 0.04070650648343205,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q28",
+      "q": "I want my application to behave differently depending on what capabilities another contract provides.",
+      "expect": [
+        "erc-165"
+      ],
+      "standards": [
+        "EIP-165"
+      ],
+      "difficulty": "medium",
+      "type": "indirect",
+      "covered": 1,
+      "ranked": [
+        "eip-7702",
+        "erc-165",
+        "erc-4337",
+        "erc-2771",
+        "erc-721"
+      ],
+      "topScore": 0.45112371095408726,
+      "spread": 0.05292732944162937,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q29",
+      "q": "A decentralized application needs to work with wallets controlled by code rather than just normal private keys. How can signatures be handled?",
+      "expect": [
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-1271"
+      ],
+      "difficulty": "hard",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-1271",
+        "eip-7702",
+        "eip-712"
+      ],
+      "topScore": 0.5751542078474139,
+      "spread": 0.044212275886874375,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q30",
+      "q": "I want a wallet to become more programmable without forcing the user to move everything to a completely new account.",
+      "expect": [
+        "eip-7702"
+      ],
+      "standards": [
+        "EIP-7702"
+      ],
+      "difficulty": "hard",
+      "type": "indirect",
+      "covered": 1,
+      "ranked": [
+        "eip-7702",
+        "erc-4337",
+        "erc-20"
+      ],
+      "topScore": 0.4923726866763283,
+      "spread": 0.03944733605712769,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q31",
+      "q": "What problem does isValidSignature solve for smart contract wallets?",
+      "expect": [
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-1271"
+      ],
+      "difficulty": "easy",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-1271",
+        "eip-712",
+        "erc-4337",
+        "eip-7702"
+      ],
+      "topScore": 0.6583735842100892,
+      "spread": 0.07356426157287188,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q32",
+      "q": "What is the purpose of the supportsInterface function?",
+      "expect": [
+        "erc-165"
+      ],
+      "standards": [
+        "EIP-165"
+      ],
+      "difficulty": "easy",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-165",
+        "erc-1155",
+        "erc-2771",
+        "erc-721",
+        "erc-20"
+      ],
+      "topScore": 0.52365356588798,
+      "spread": 0.07186363422342068,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q33",
+      "q": "Why does EIP-712 use a domain separator?",
+      "expect": [
+        "eip-712"
+      ],
+      "standards": [
+        "EIP-712"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "eip-712",
+        "eip-1",
+        "eip-7702",
+        "erc-165"
+      ],
+      "topScore": 0.6618568090927622,
+      "spread": 0.14044661878999498,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q34",
+      "q": "What is the difference between the base fee and priority fee introduced by EIP-1559?",
+      "expect": [
+        "eip-1559"
+      ],
+      "standards": [
+        "EIP-1559"
+      ],
+      "difficulty": "easy",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "eip-1559",
+        "erc-4337",
+        "eip-7702",
+        "eip-1"
+      ],
+      "topScore": 0.6039694014642857,
+      "spread": 0.050566046774845,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q35",
+      "q": "How does EIP-55 encode checksum information into an Ethereum address?",
+      "expect": [
+        "erc-55"
+      ],
+      "standards": [
+        "EIP-55"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-55",
+        "eip-712",
+        "eip-1",
+        "eip-7702",
+        "erc-1155"
+      ],
+      "topScore": 0.583952922845153,
+      "spread": 0.1156987338913511,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q36",
+      "q": "What is the difference between ERC-721 and ERC-1155 in terms of asset representation?",
+      "expect": [
+        "erc-721",
+        "erc-1155"
+      ],
+      "standards": [
+        "EIP-721",
+        "EIP-1155"
+      ],
+      "difficulty": "easy",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "erc-1155",
+        "erc-721"
+      ],
+      "topScore": 0.5515468144889519,
+      "spread": 0.03222663249863211,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q37",
+      "q": "What problem is ERC-2771 trying to solve?",
+      "expect": [
+        "erc-2771"
+      ],
+      "standards": [
+        "EIP-2771"
+      ],
+      "difficulty": "easy",
+      "type": "technical",
+      "covered": 0,
+      "ranked": [
+        "erc-721",
+        "erc-1155",
+        "eip-7702",
+        "erc-4337"
+      ],
+      "topScore": 0.5247474776985415,
+      "spread": 0.01418759238826317,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q38",
+      "q": "What is the role of a bundler in ERC-4337?",
+      "expect": [
+        "erc-4337"
+      ],
+      "standards": [
+        "EIP-4337"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-4337",
+        "eip-7702",
+        "erc-1155",
+        "erc-721"
+      ],
+      "topScore": 0.576384671218329,
+      "spread": 0.08786691109693678,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q39",
+      "q": "How does EIP-7702 allow an EOA to temporarily execute code?",
+      "expect": [
+        "eip-7702"
+      ],
+      "standards": [
+        "EIP-7702"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "eip-7702",
+        "erc-4337"
+      ],
+      "topScore": 0.6293239764973048,
+      "spread": 0.03354247439816482,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q40",
+      "q": "What is the difference between an EOA signature and a contract-based signature?",
+      "expect": [
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-1271"
+      ],
+      "difficulty": "medium",
+      "type": "comparison",
+      "covered": 1,
+      "ranked": [
+        "erc-1271",
+        "eip-7702",
+        "eip-712"
+      ],
+      "topScore": 0.6714441083289197,
+      "spread": 0.14425906783843978,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q41",
+      "q": "What is an Ethereum Improvement Proposal and what stages does it go through?",
+      "expect": [
+        "eip-1"
+      ],
+      "standards": [
+        "EIP-1"
+      ],
+      "difficulty": "easy",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "eip-1",
+        "eip-7702",
+        "erc-20",
+        "erc-4337"
+      ],
+      "topScore": 0.6739457925733997,
+      "spread": 0.169524334629098,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q42",
+      "q": "Why was ERC-1155 introduced instead of deploying a separate contract for every game asset?",
+      "expect": [
+        "erc-1155"
+      ],
+      "standards": [
+        "EIP-1155"
+      ],
+      "difficulty": "medium",
+      "type": "technical",
+      "covered": 1,
+      "ranked": [
+        "erc-1155",
+        "erc-721",
+        "erc-20",
+        "eip-7702"
+      ],
+      "topScore": 0.683509919456428,
+      "spread": 0.15644676892372755,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q43",
+      "q": "What is the difference between letting users pay their own transaction fees and having someone else pay them?",
+      "expect": [
+        "erc-4337",
+        "erc-2771"
+      ],
+      "standards": [
+        "EIP-4337",
+        "EIP-2771"
+      ],
+      "difficulty": "medium",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "eip-1559",
+        "erc-4337",
+        "eip-7702",
+        "erc-2771"
+      ],
+      "topScore": 0.5183248274832148,
+      "spread": 0.03757529238978624,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q44",
+      "q": "When would I use a unique digital item instead of a system that supports many copies of different items?",
+      "expect": [
+        "erc-721",
+        "erc-1155"
+      ],
+      "standards": [
+        "EIP-721",
+        "EIP-1155"
+      ],
+      "difficulty": "medium",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "erc-1155",
+        "erc-721",
+        "erc-2771"
+      ],
+      "topScore": 0.4380697240889363,
+      "spread": 0.05831181944600361,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q45",
+      "q": "How is a smart contract's ability to approve a signature different from a normal wallet signing a message?",
+      "expect": [
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-1271"
+      ],
+      "difficulty": "hard",
+      "type": "comparison",
+      "covered": 1,
+      "ranked": [
+        "erc-1271",
+        "erc-4337",
+        "eip-712",
+        "erc-20",
+        "eip-7702"
+      ],
+      "topScore": 0.5823189343004783,
+      "spread": 0.05792447304309467,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q46",
+      "q": "How is making an Ethereum address easier to validate different from making a transaction easier to understand?",
+      "expect": [
+        "erc-55",
+        "eip-712"
+      ],
+      "standards": [
+        "EIP-55",
+        "EIP-712"
+      ],
+      "difficulty": "hard",
+      "type": "comparison",
+      "covered": 1,
+      "ranked": [
+        "erc-4337",
+        "eip-7702",
+        "eip-712",
+        "erc-1271",
+        "eip-1559"
+      ],
+      "topScore": 0.5116762359154226,
+      "spread": 0.030388629581835802,
+      "hit1": false,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q47",
+      "q": "What is the difference between making an existing wallet programmable and creating a new smart wallet?",
+      "expect": [
+        "eip-7702",
+        "erc-4337"
+      ],
+      "standards": [
+        "EIP-7702",
+        "EIP-4337"
+      ],
+      "difficulty": "hard",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "eip-7702",
+        "erc-4337",
+        "erc-20",
+        "erc-721"
+      ],
+      "topScore": 0.48216432963007255,
+      "spread": 0.06870375507712978,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q48",
+      "q": "How are transaction fees handled differently before and after Ethereum's newer fee-market design?",
+      "expect": [
+        "eip-1559"
+      ],
+      "standards": [
+        "EIP-1559"
+      ],
+      "difficulty": "medium",
+      "type": "comparison",
+      "covered": 1,
+      "ranked": [
+        "eip-1559",
+        "eip-7702",
+        "erc-4337",
+        "erc-2771"
+      ],
+      "topScore": 0.590949810375426,
+      "spread": 0.07899733195888847,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q49",
+      "q": "If I am building a game with unique characters and large quantities of consumable items, which asset standards should I consider and why?",
+      "expect": [
+        "erc-721",
+        "erc-1155"
+      ],
+      "standards": [
+        "EIP-721",
+        "EIP-1155"
+      ],
+      "difficulty": "hard",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "erc-1155",
+        "erc-721",
+        "eip-712"
+      ],
+      "topScore": 0.5056676442408902,
+      "spread": 0.07054431058498861,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q50",
+      "q": "If I want users to sign an action, have someone else submit it, and support smart contract wallets, which standards might be involved?",
+      "expect": [
+        "eip-712",
+        "erc-2771",
+        "erc-1271"
+      ],
+      "standards": [
+        "EIP-712",
+        "EIP-2771",
+        "EIP-1271"
+      ],
+      "difficulty": "hard",
+      "type": "comparison",
+      "covered": 2,
+      "ranked": [
+        "erc-1271",
+        "eip-712",
+        "erc-20",
+        "eip-7702",
+        "erc-4337"
+      ],
+      "topScore": 0.5632126040812641,
+      "spread": 0.04603740060063921,
+      "hit1": true,
+      "hit3": true,
+      "hit5": true
+    },
+    {
+      "id": "q51",
+      "q": "How do I deploy a Solidity contract to Ethereum mainnet?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "erc-20",
+        "erc-4337",
+        "eip-1",
+        "eip-712",
+        "erc-721"
+      ],
+      "topScore": 0.3992312668803152,
+      "spread": 0.022463724443568645,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q52",
+      "q": "What programming language should I use to build a blockchain application?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "eip-7702",
+        "eip-712",
+        "erc-1155",
+        "erc-20",
+        "eip-1559"
+      ],
+      "topScore": 0.3640253690097,
+      "spread": 0.03873299872073477,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q53",
+      "q": "How does Ethereum mining work?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "eip-1559",
+        "eip-1",
+        "erc-4337"
+      ],
+      "topScore": 0.4507190626510022,
+      "spread": 0.04225413902398023,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q54",
+      "q": "How can I reduce the size of my JavaScript bundle?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "erc-4337",
+        "erc-55",
+        "eip-7702",
+        "eip-712",
+        "erc-1155"
+      ],
+      "topScore": 0.3488302312160893,
+      "spread": 0.08908608179273642,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q55",
+      "q": "What's the difference between Ethereum and Solana?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "erc-20",
+        "eip-712",
+        "eip-1",
+        "erc-721",
+        "erc-1155"
+      ],
+      "topScore": 0.45793887234818126,
+      "spread": 0.06214953538508072,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q56",
+      "q": "How do I build a React frontend for my wallet application?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "erc-20",
+        "eip-7702",
+        "eip-712",
+        "erc-721",
+        "erc-2771"
+      ],
+      "topScore": 0.3826228866054676,
+      "spread": 0.050737226031232874,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q57",
+      "q": "What is a Merkle tree and why is it useful?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "medium",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "eip-712",
+        "erc-1155",
+        "erc-721",
+        "erc-55",
+        "erc-4337"
+      ],
+      "topScore": 0.3311353768466789,
+      "spread": 0.03864278787212905,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q58",
+      "q": "How can I store images cheaply for my NFT collection?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "erc-721",
+        "eip-1",
+        "erc-1155",
+        "eip-7702"
+      ],
+      "topScore": 0.41069683104561905,
+      "spread": 0.0650302411877634,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q59",
+      "q": "How do I write a Solidity function that transfers tokens?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "medium",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "erc-20",
+        "erc-1155",
+        "erc-721"
+      ],
+      "topScore": 0.6123192421882914,
+      "spread": 0.061896227258472214,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    },
+    {
+      "id": "q60",
+      "q": "How do I secure my private key?",
+      "expect": [],
+      "standards": [],
+      "difficulty": "easy",
+      "type": "negative",
+      "covered": 0,
+      "ranked": [
+        "eip-712",
+        "erc-4337",
+        "eip-7702",
+        "erc-1271",
+        "eip-1559"
+      ],
+      "topScore": 0.3532031249973575,
+      "spread": 0.07313724127097859,
+      "hit1": false,
+      "hit3": false,
+      "hit5": false
+    }
+  ]
+}

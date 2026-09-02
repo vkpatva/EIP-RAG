@@ -1,3 +1,11 @@
 node_modules/
 dist/
 data/chunks.json
+
+# Local secrets — never commit. .env.example is the tracked template.
+.env
+.env.local
+.env.*.local
+
+# Embedding output: large (13MB+) and regenerable from chunks.json plus a key.
+data/embeddings*.json
