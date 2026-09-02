@@ -1,0 +1,24 @@
+# Local Qdrant for the vector-retrieval stage.
+#
+#   docker compose up -d      start
+#   docker compose down       stop (data survives, it is in the named volume)
+#   docker compose down -v    stop and wipe the collections
+#
+# The version is pinned, and matched to the @qdrant/js-client-rest major.minor
+# in package.json — the client warns loudly on a mismatch. Pinning also keeps
+# a `latest` from changing the storage format under you: an unpinned `latest` can change the
+# storage format under you, and a corpus that has to be re-embedded to be
+# read again is an expensive surprise.
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.19.0
+    container_name: eip-rag-qdrant
+    ports:
+      - "6333:6333"   # REST + the web dashboard at http://localhost:6333/dashboard
+      - "6334:6334"   # gRPC, used by the TS client when preferGrpc is set
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+
+volumes:
+  qdrant_storage:
