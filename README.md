@@ -62,7 +62,7 @@ npm run eval:retrieval -- --out=eval/retrieval-openai.json
 
 npm run generate                  # retrieve + generate for a probe set
 npm run generate -- "What is EIP-712?" --k=5
-npm run generate -- --hybrid      # hybrid retrieval feeding generation
+npm run generate -- --dense       # dense-only (hybrid is the default)
 npm run generate -- --show-prompt # print the exact prompt sent to the LLM
 npm run generate -- --mode=synthesis   # allow code generation from the spec
 npm run generate -- --mode=extraction  # force strict evidence-only answers
@@ -74,7 +74,7 @@ npm run ask -- --show-prompt      # print the exact prompt sent to the LLM
 npm run ask -- --mode=extraction  # force strict evidence-only answers
 npm run ask -- --json             # RAGResponse as JSON
 npm run ask -- --keep-sources     # do not suppress sources on a refusal
-npm run ask -- --dense            # dense-only (hybrid is the default here)
+npm run ask -- --dense            # dense-only (hybrid is the default)
 
 npm run verify:attribution        # prove no source was fabricated
 
@@ -120,7 +120,7 @@ src/eval-retrieval.ts dev script: Recall@K over the labelled set
 src/generator/    types.ts, prompt.ts, openai.ts, generationService.ts, index.ts
 src/generate.ts   dev script: retrieve + generate, end to end
 src/attribution/  types.ts, sourceMapper.ts, support.ts, render.ts,
-                  pipeline.ts, index.ts
+                  pipeline.ts, index.ts (render.ts shared with generate.ts)
 src/ask.ts        dev script: the attributed pipeline (answer + sources)
 src/verify-attribution.ts dev script: assert no source was fabricated
 src/experiment-context.ts dev script: retrieval quality vs. answer quality
@@ -992,9 +992,23 @@ from "the evidence was not there", which the answer text alone does not.
 
 ### Two scripts, one retriever
 
-`npm run ask` shows the product — the answer with its citations. `npm run
-generate` inspects the stages, and `--show-prompt` there prints the exact
-strings sent to the LLM. Both default to `--mode=auto`.
+`npm run ask` is a superset of `npm run generate`: same retrieval defaults
+(hybrid, `--dense` to opt out), same mode heuristic (`--mode=auto`), same
+diagnostics (`--show-chunks`, `--show-prompt`, per-hit scores, `retrievedBy`,
+the score spread, `--chars`), plus the source list and `--json`. `generate` is
+kept unchanged in behaviour as the Module 5 script, useful when the sources are
+noise.
+
+They drifted once, and the drift is the reason the rendering is now shared.
+Hybrid was opt-in on `generate` and on by default in `ask`, so the same question
+put to the two scripts retrieved different chunks and produced answers unalike
+enough to read as a bug in the attribution layer. It was a flag default. Both
+now build their retrieval block from `formatRetrieval` in
+`attribution/render.ts` — one function, so a change to either script's output is
+a change to both — and `generate.ts` lost 35 lines of duplicated formatting in
+the process. Holding retrieval constant (`npm run ask -- --dense`) makes the two
+produce the same answer, because `ask` adds a source list and changes nothing
+about generation.
 
 The `ANSWER` header carries the model and the mode in both, and the mode is the
 half that matters. With `--mode=auto` it is a heuristic's guess over the
