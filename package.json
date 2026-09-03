@@ -16,7 +16,9 @@
     "retrieve": "tsx --env-file-if-exists=.env src/retrieve.ts",
     "eval:retrieval": "tsx --env-file-if-exists=.env src/eval-retrieval.ts",
     "generate": "tsx --env-file-if-exists=.env src/generate.ts",
-    "experiment": "tsx --env-file-if-exists=.env src/experiment-context.ts"
+    "experiment": "tsx --env-file-if-exists=.env src/experiment-context.ts",
+    "ask": "tsx --env-file-if-exists=.env src/ask.ts",
+    "verify:attribution": "tsx --env-file-if-exists=.env src/verify-attribution.ts"
   },
   "repository": {
     "type": "git",
