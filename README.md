@@ -25,6 +25,8 @@ npm run inspect -- erc-20         # one document in full (--body for entire text
 
 npm run chunk                     # chunk all documents -> data/chunks.json
 npm run chunk -- --size=500 --overlap=50
+npm run chunk -- --min=200        # sibling-packing floor (default 400)
+npm run chunk -- --no-overviews   # skip synthesized interface-overview chunks
 npm run chunk -- --dry            # print summary, write nothing
 npm run chunk -- --out=path.json
 
@@ -112,7 +114,12 @@ directory throws — a typo'd path should fail loudly, not return an empty resul
 
 ```ts
 import { chunkDocuments } from "./src/chunker/index.js";
-const chunks = chunkDocuments(documents, { chunkSize: 1000, chunkOverlap: 150 });
+const chunks = chunkDocuments(documents, {
+  chunkSize: 1000,
+  chunkOverlap: 150,
+  minChunkSize: 400,
+  synthesizeOverviews: true,
+});
 ```
 
 ```ts
@@ -124,8 +131,10 @@ interface Chunk {
   eip?: number;        // from frontmatter
   title?: string;      // from frontmatter
   section?: string;    // nearest markdown heading above this text
+  embedText: string;   // what is embedded: text + provenance header
   charStart: number;   // content.slice(charStart, charEnd) === text
   charEnd: number;
+  synthetic?: true;    // a built overview chunk, not a verbatim slice
   source: DocumentSource;
 }
 ```
@@ -138,6 +147,69 @@ Defaults are 1000/150 characters. Smaller chunks match more precisely but can lo
 context needed to interpret them; larger chunks read better but dilute the embedding.
 EIPs are dense specs where a sentence often depends on a definition just above it, so
 the default sits at the larger end.
+
+### Sibling packing
+
+Splitting on every heading level fragments a spec. EIPs put each method under its own
+`####` heading, so ERC-20's nine methods became nine chunks of ~60 characters each:
+
+```
+before:  339847731d356207:7   totalSupply    (60ch)
+         339847731d356207:8   balanceOf      (95ch)
+         339847731d356207:9   transfer      (180ch)      19 chunks for erc-20.md
+after:   339847731d356207:2   Methods > name, symbol, decimals, totalSupply  (975ch)
+         339847731d356207:3   Methods > balanceOf, transfer                  (559ch)
+                                                          13 chunks for erc-20.md
+```
+
+Two failures, compounding. Nothing contained *the list* a question like "what
+functions do I need?" is asking for; and a 60-character fragment has too little
+semantic surface to outrank a 200-word prose block from another standard. Sections
+under `minChunkSize` now pack together with their siblings up to `chunkSize`,
+stopping when the parent heading changes so `Methods > approve` never merges with
+`Events > Transfer`.
+
+### Synthesized overview chunks
+
+Packing alone cannot fix it. ERC-20's full method list is ~4400 characters, so no
+size-bounded chunk can hold it — and the list is exactly what the question wants.
+So it is built rather than found: one chunk per heading whose children declare
+signatures, holding every signature under it and nothing else.
+
+```
+EIP-20 — Token Standard · Methods — complete list
+
+All methods required by this standard (9 total):
+
+- function name() public view returns (string)
+- function totalSupply() public view returns (uint256)
+- function balanceOf(address _owner) public view returns (uint256 balance)
+...
+```
+
+12 such chunks across the corpus, built by regex over `function`/`event` lines — no
+LLM, deterministic, free. They are the one place `content.slice(charStart, charEnd)
+!== text`, so they carry `synthetic: true` rather than hiding the exception.
+
+### `embedText` vs `text`
+
+`text` is evidence: a verbatim slice, shown to the LLM and to you, keeping the
+offset invariant meaningful. `embedText` is a retrieval key — the same text with a
+provenance header, and the RFC 2119 keyword paragraph stripped out:
+
+```
+EIP-20 — Token Standard · Token > Methods > balanceOf, transfer
+
+Returns the account balance of another account with address `_owner`. ...
+```
+
+Both halves earn their place. ERC-20's `totalSupply` body never contains the string
+"ERC-20", "token", or "interface", so a query naming any of them had nothing to
+match. And the RFC 2119 sentence ("The key words MUST, REQUIRED, SHALL...") is
+repeated near-verbatim in every EIP and is dense in exactly the words a requirements
+question uses — it pulled unrelated Specification sections to rank 1 for "what
+functions do I need?" on the strength of words carrying no information about the
+section's subject. Stripped from the embedding, kept in the evidence.
 
 ## Embedder
 
@@ -176,6 +248,10 @@ with no words in common — that is what makes retrieval work on paraphrase.
 `eval/queries.json` holds 60 labelled questions — 50 with an expected document,
 10 negative controls that no document in the corpus answers. `npm run eval`
 scores hit@k after collapsing several chunks from one document into one result.
+
+This is the pre-Qdrant measurement: brute-force cosine straight over
+`data/embeddings.json`, scored on documents after collapsing. The numbers below are
+from the earlier 428-chunk corpus and have not been re-run since the chunker rework.
 
 | Metric | OpenAI `text-embedding-3-small` |
 |---|---|
@@ -224,12 +300,12 @@ accepts only integers and UUIDs, not `"eip-1559.md:3"`). Upsert means insert-or-
 replace-by-id, so a stable id makes re-ingestion idempotent:
 
 ```
-run 1: before 0    after 428  delta +428
-run 2: before 428  after 428  delta +0
-run 3: before 428  after 428  delta +0
+run 1: before 0    after 418  delta +418
+run 2: before 418  after 418  delta +0
+run 3: before 418  after 418  delta +0
 ```
 
-With `randomUUID()` the same three runs give 428 -> 856 -> 1284, and a Top-5 collapses
+With `randomUUID()` the same three runs give 418 -> 836 -> 1254, and a Top-5 collapses
 to two distinct chunks repeated — retrieval diversity destroyed while every line of
 code still appears to work. Measured, not assumed.
 
@@ -278,7 +354,7 @@ least-unrelated in the corpus, at 0.20-0.25. Low scores are the only signal that
 nothing relevant exists, and the right cutoff has to be measured (see below), not
 guessed.
 
-At 428 points Qdrant brute-forces rather than building an HNSW index, so these
+At 418 points Qdrant brute-forces rather than building an HNSW index, so these
 results are exact. Approximation only starts mattering around 10k+ points.
 
 ## Vector retrieval evaluation
@@ -289,18 +365,18 @@ if Recall@5 is poor, nothing downstream can recover, because the answer was neve
 retrieved. Recall is scored on the *document*, not the chunk — which of eip-1559's
 30 chunks surfaced is not the question.
 
-text-embedding-3-small, 428 chunks, 50 answerable queries:
+text-embedding-3-small, 418 chunks, 50 answerable queries:
 
 ```
-Recall@1  37/50  74.0%
-Recall@3  42/50  84.0%
-Recall@5  43/50  86.0%
+Recall@1  36/50  72.0%
+Recall@3  40/50  80.0%
+Recall@5  42/50  84.0%
 
 By type:                          By difficulty:
-  comparison  n=11  R@5  91%        easy    n=14  R@5  79%
-  indirect    n= 5  R@5  60%        medium  n=26  R@5  88%
+  comparison  n=11  R@5  82%        easy    n=14  R@5  86%
+  indirect    n= 5  R@5  80%        medium  n=26  R@5  81%
   natural     n= 6  R@5 100%        hard    n=10  R@5  90%
-  product     n=14  R@5  79%
+  product     n=14  R@5  71%
   technical   n=14  R@5  93%
 ```
 
@@ -375,15 +451,18 @@ arrive, but the abort signal stays armed while the body streams, and a
 100-chunk response is several MB. Parsing outside the guard let a timeout escape
 as an uncaught `DOMException` instead of being retried.
 
-**Offsets round-trip.** `content.slice(charStart, charEnd) === text` holds for all 428
-chunks, which is only true because the loader preserves the body byte-for-byte. Worth
-re-checking after any splitter change.
+**Offsets round-trip.** `content.slice(charStart, charEnd) === text` holds for every
+chunk except the 12 synthesized overviews, which are flagged `synthetic: true` for
+exactly that reason. It is only true because the loader preserves the body
+byte-for-byte. Worth re-checking after any splitter change.
 
 ## Limitations
 
-- Chunk text is body prose only, so its embedding carries no title or section context.
-  Prepending it was tried and did not help (see below); the metadata is on the chunk
-  if you want to revisit it.
+- Chunk text now carries a provenance header for embedding (`embedText`), which
+  reverses an earlier finding recorded here. Prepending the title alone did not help;
+  prepending EIP number + title + heading path, *and* stripping the RFC 2119
+  boilerplate, does — it is what makes the ERC-20 method chunks reachable by a query
+  naming ERC-20 at all. The earlier negative result was about a weaker header.
 - Windows cut mid-sentence. The usual upgrade is recursive splitting: prefer `\n\n`,
   then `\n`, then `. `, then hard-cut.
 - The loader reads one flat directory. Nested dirs need `{ recursive: true }` in
@@ -416,12 +495,15 @@ re-checking after any splitter change.
   signal cosine does not provide — a reranker, or an LLM judging the retrieved text.
 - **Re-ingestion after a content edit is not wired up.** `deleteDocument` exists and
   works, but `npm run index` only upserts. A document that re-chunks into fewer
-  pieces leaves orphan points behind. The clean flow is delete-then-upsert per
-  document, keyed on `Document.contentHash`, which the loader already computes.
+  pieces leaves orphan points behind. This is not hypothetical: the chunker rework
+  took the corpus from 428 to 418 chunks, and a plain `npm run index` left a
+  collection of 432 points — 14 orphans holding stale text that still ranked. Use
+  `npm run index -- --recreate` after any chunker change until delete-then-upsert per
+  document is wired up, keyed on `Document.contentHash`, which the loader computes.
 - **No filtered search.** The payload carries `eipNumber`, `section` and
   `documentId`, and Qdrant can filter on all three, but `retrieve()` exposes no way
   to say "only within EIP-1559" or "only Specification sections".
 - **The Voyage collection is indexed but not evaluated.** `npm run index --
-  --in=data/embeddings-voyage.json` fills `eip_chunks_voyage_3` (428 points, 1024
+  --in=data/embeddings-voyage.json` fills `eip_chunks_voyage_3` (418 points, 1024
   dims). Scoring it needs `--interval` pacing against Voyage's rate limit, and was
   not run here.

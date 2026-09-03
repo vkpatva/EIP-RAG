@@ -106,7 +106,10 @@ export async function embedChunks(
 
     const vectors = await embedWithRetry(
       provider,
-      group.map((c) => c.text),
+      // `embedText`, not `text`: the provenance header is a retrieval key,
+      // and the chunker built it precisely so a body that omits "ERC-20" is
+      // still findable by that name. See Chunk.embedText.
+      group.map((c) => c.embedText ?? c.text),
       opts,
       // Chunks are corpus content, always. Queries go through `embedQuery`.
       "document",
