@@ -54,9 +54,10 @@ npm run retrieve -- "How can a smart contract verify a signature?" --k=5
 npm run retrieve -- --chars=800   # more of each chunk's text
 npm run retrieve -- --hybrid      # dense + BM25, fused by rank
 
-npm run eval:retrieval            # Recall@1/3/5 against eval/queries.json
+npm run eval:retrieval            # Recall@1/3/5 against eval/queries.json (527 q)
 npm run eval:retrieval -- --hybrid
 npm run eval:retrieval -- --hybrid --bm25-weight=0.3 --rrf-k=5
+npm run eval:retrieval -- --limit=25        # quick pass; the full set is ~45 min
 npm run eval:retrieval -- --out=eval/retrieval-openai.json
 
 npm run generate                  # retrieve + generate for a probe set
@@ -105,7 +106,8 @@ src/generator/    types.ts, prompt.ts, openai.ts, generationService.ts, index.ts
 src/generate.ts   dev script: retrieve + generate, end to end
 src/experiment-context.ts dev script: retrieval quality vs. answer quality
 docker-compose.yml    local Qdrant, version pinned to the client
-eval/queries.json 60 labelled questions (50 positive, 10 negative)
+eval/queries.json 527 labelled questions (467 positive, 60 negative)
+eval/retrieval-*-527.json  generated eval output (dense and hybrid runs)
 data/embeddings*.json  generated output (gitignored, ~13 MB)
 ```
 
@@ -264,16 +266,17 @@ with no words in common — that is what makes retrieval work on paraphrase.
 
 ## Retrieval evaluation
 
-`eval/queries.json` holds 60 labelled questions — 50 with an expected document,
-10 negative controls that no document in the corpus answers. `npm run eval`
+`eval/queries.json` holds 527 labelled questions — 467 with an expected document,
+60 negative controls that no document in the corpus answers. `npm run eval`
 scores hit@k after collapsing several chunks from one document into one result.
 
 This is the pre-Qdrant measurement: brute-force cosine straight over
 `data/embeddings.json`, scored on documents after collapsing. It is kept because it
-isolates the embedding from the store, but the numbers below are from the earlier
-428-chunk corpus and have not been re-run since the chunker rework — see **Vector
-retrieval evaluation** for current, Qdrant-backed figures, which are not directly
-comparable (Recall@K over chunks vs hit@k over collapsed documents).
+isolates the embedding from the store, but the numbers below are stale twice over:
+they are from the earlier 428-chunk corpus *and* from the earlier 60-question set,
+and have not been re-run since either changed. See **Vector retrieval evaluation**
+for current, Qdrant-backed figures over the full 527, which are not directly
+comparable in any case (Recall@K over chunks vs hit@k over collapsed documents).
 
 | Metric | OpenAI `text-embedding-3-small` |
 |---|---|
@@ -387,50 +390,134 @@ if Recall@5 is poor, nothing downstream can recover, because the answer was neve
 retrieved. Recall is scored on the *document*, not the chunk — which of eip-1559's
 30 chunks surfaced is not the question.
 
-text-embedding-3-small, 418 chunks, 50 answerable queries, K=5:
+text-embedding-3-small, 418 chunks, 467 answerable queries, K=5:
 
 | Metric | Dense | Hybrid |
 |---|--:|--:|
-| Recall@1 | 72.0% | 70.0% |
-| Recall@3 | 80.0% | **84.0%** |
-| Recall@5 | 84.0% | **88.0%** |
+| Recall@1 | 86.5% | **87.8%** |
+| Recall@3 | 92.9% | **94.2%** |
+| Recall@5 | 94.2% | **95.9%** |
 
-By type (Recall@5):
+By type (Recall@1 / Recall@5):
 
-| Type | n | Dense | Hybrid |
-|---|--:|--:|--:|
-| natural | 6 | 100% | 100% |
-| technical | 14 | 93% | **100%** |
-| comparison | 11 | 82% | **91%** |
-| indirect | 5 | 80% | 80% |
-| product | 14 | 71% | 71% |
+| Type | n | Dense R@1 | Hybrid R@1 | Dense R@5 | Hybrid R@5 |
+|---|--:|--:|--:|--:|--:|
+| natural | 24 | 91.7% | **100%** | 100% | 100% |
+| misconception | 15 | 93.3% | 93.3% | 100% | 100% |
+| technical | 319 | 93.1% | **94.7%** | 96.6% | **98.7%** |
+| comparison | 52 | 73.1% | 73.1% | 88.5% | **92.3%** |
+| product | 48 | 60.4% | 58.3% | 81.3% | 81.3% |
+| indirect | 9 | 44.4% | 44.4% | 88.9% | 77.8% |
+
+Per document, hybrid, weighting each EIP equally rather than by question count
+(**macro avg R@1 82.7%, R@5 94.4%** — both below the micro figures, because the
+weakest documents are the small ones):
+
+| Doc | n | R@1 | R@5 | | Doc | n | R@1 | R@5 |
+|---|--:|--:|--:|---|---|--:|--:|--:|
+| eip-1 | 50 | 100% | 100% | | eip-1559 | 45 | 88.9% | 95.6% |
+| erc-1271 | 33 | 90.9% | 100% | | eip-7702 | 58 | 86.2% | 94.8% |
+| erc-1155 | 61 | 93.4% | 98.4% | | eip-712 | 43 | 79.1% | 90.7% |
+| erc-721 | 60 | 90.0% | 98.3% | | erc-2771 | 35 | 62.9% | 88.6% |
+| erc-165 | 28 | 78.6% | 96.4% | | erc-55 | 16 | 81.3% | 87.5% |
+| erc-4337 | 77 | 80.5% | 96.1% | | erc-20 | 23 | 60.9% | 87.0% |
 
 The breakdowns are where the signal is; the aggregate hides it.
 
-- **Hybrid buys depth, not top-1.** +4pts at both R@3 and R@5, and −1 query at R@1.
-  That is the known tradeoff of rank fusion: RRF rewards agreement between the two
-  retrievers, which promotes chunks both find and can displace a chunk one of them
-  ranked first alone.
-- **It helps where identifiers appear, which is not where it was aimed.** `technical`
-  (93→100%) and `comparison` (82→91%) improved, because those queries contain literal
-  tokens — `supportsInterface`, `isValidSignature`, a standard's number — and that is
-  exactly what BM25 sees sharply. `product` queries are vague natural language ("create
-  unique digital items for my game") with no distinctive keywords, so BM25 contributes
-  mostly noise and the category is unchanged at 71%. Hybrid retrieval was added to fix
-  `product`; it did not.
-- **`indirect` and `product` remain the weak spots.** Difficulty labels track how hard
-  the *concept* is; retrieval instead fails on how far the phrasing sits from the
-  document's own vocabulary. A product framing describes a goal, the document
-  describes a mechanism, and no amount of lexical matching bridges that — this is the
-  query-rewriting- and reranker-shaped hole.
-- **Negatives still do not separate.** Answerable queries score 0.29-0.72 at Top-1;
-  negatives 0.26-0.56, overlapping by 0.27. q59 ("How do I write a Solidity function
-  that transfers tokens?") outscores 30 of the 50 real questions because it is
-  genuinely about ERC-20's topic while not being answerable from it. **Topical
-  similarity is not answerability**, and cosine measures only the first. Fusion makes
-  this worse rather than better: RRF scores are positional, so they carry even less
-  "is anything here relevant?" signal than a raw cosine score. A score threshold is
-  not available as an "I don't know" mechanism in either mode.
+- **These numbers are not comparable to the previous 50-query set** (which scored
+  84.0% R@5 dense / 88.0% hybrid). Recall went *up* while the question set got
+  harder, because the mix changed: the 527 set is 61% `technical`, the strongest
+  category, where the old set was disproportionately `product` and `indirect`, the
+  two weakest. A change in the aggregate across sets measures the set, not the
+  retriever.
+- **Difficulty labels do not predict retrieval difficulty.** Hybrid scores `hard`
+  97.3% R@5, `medium` 94.7%, `easy` 91.7% — inverted and nearly flat. The labels
+  track how hard the *concept* is; retrieval fails instead on how far the phrasing
+  sits from the document's own vocabulary. Read the `type` breakdown, not this one.
+- **Hybrid now helps at every cutoff** (+6 queries at R@1, +8 at R@5), where on the
+  50-query set it cost one query at R@1. It fixed 10 and broke 2. The 10 are almost
+  all identifier-bearing: "the four roles defined in ERC-2771", "what problem is
+  ERC-2771 trying to solve", "what exactly is signed in an EIP-1559 transaction" —
+  literal tokens and standard numbers, which is what BM25 and the `doc<N>` marker see
+  sharply. The 2 it broke are `product`/`indirect` phrasings where BM25 contributed
+  noise.
+- **`product` and `indirect` remain the weak spots, and hybrid does not touch them.**
+  `product` is 81.3% R@5 in both modes and actually loses 1 query at R@1. A product
+  framing describes a goal, the document describes a mechanism, and no amount of
+  lexical matching bridges that — the query-rewriting- and reranker-shaped hole. This
+  reproduces the earlier finding at 3.4x the sample size.
+- **`erc-20` loses fungible-token product questions to `erc-1155`.** 60.9% R@1 is the
+  worst in the corpus. "I'm building a game where players buy coins", "which standard
+  if I only care about my token appearing correctly in wallets", "how do I let a
+  contract pull tokens from a user's balance" all retrieve `erc-1155` instead, in both
+  modes. ERC-1155 discusses fungible *and* non-fungible tokens at length across 710
+  lines, so it out-competes the 193-line document that actually defines fungible
+  tokens. Being the canonical answer is not the same as being the strongest topical
+  match.
+- **Multi-document questions retrieve all their labels only 31.4% of the time**
+  (16/51 hybrid, up from 21.6% dense) against 90.2% for "at least one". Recall@K
+  credits any single expected document, so a comparison question scores as a hit while
+  supplying half the evidence — and `npm run experiment` already showed that partial
+  evidence yields a correct-but-incomplete answer, not a wrong one. For comparisons the
+  aggregate is optimistic; this is the number to watch when tuning K.
+- **Negatives still do not separate, and more of them made it worse.** Answerable
+  queries score 0.2609-0.8064 at Top-1 (mean 0.5589); negatives 0.2615-0.6466 (mean
+  0.4202), overlapping by 0.3857 where the 60-query set overlapped by 0.27. The means
+  are far apart and the ranges nest almost completely. q396 ("what is account
+  abstraction on other blockchains?") scores 0.6466 and thereby **outscores 375 of the
+  467 answerable queries** — it is squarely about ERC-4337's topic while being
+  answerable from no document in the corpus. **Topical similarity is not
+  answerability**, and
+  cosine measures only the first. Fusion cannot help: RRF scores are positional, so
+  they carry even less relevance signal than raw cosine, which is why the separation
+  block is identical in both modes (it reports dense scores in both).
+
+### The labelled set
+
+527 questions over all 12 documents, every one written against the source text
+rather than from memory of it. Beyond `q`/`expect`, each row carries a reference
+`answer` and a `facts` array — the claims a correct answer must contain. Neither is
+read by `eval:retrieval`, which scores retrieval only; they are there for answer-level
+scoring, which is still unbuilt.
+
+| Split | | |
+|---|--:|--:|
+| answerable / negative | 467 / 60 | 88.6% / 11.4% |
+| single-doc / multi-doc | 416 / 51 | 89.1% / 10.9% |
+
+| Type | n | % | | Difficulty | n | % |
+|---|--:|--:|---|---|--:|--:|
+| technical | 319 | 60.5% | | hard | 262 | 56.1% |
+| negative | 60 | 11.4% | | medium | 169 | 36.2% |
+| comparison | 52 | 9.9% | | easy | 36 | 7.7% |
+| product | 48 | 9.1% | | | | |
+| natural | 24 | 4.6% | | | | |
+| misconception | 15 | 2.8% | | | | |
+| indirect | 9 | 1.7% | | | | |
+
+Question counts track document length (erc-4337 at 647 lines gets 77; erc-55 at 119
+gets 16), because a four-line spec section cannot support forty distinct grounded
+questions. That makes the micro aggregate length-weighted — the four largest specs
+are ~55% of the answerable set — which is why the per-document table above reports a
+macro average alongside it.
+
+`misconception` is a type the earlier set did not have: 15 questions embedding a false
+premise ("Since ERC-721 tokens are fungible, how do I split one?"). They score 100%
+R@5, so they test the *generation* rule about not accepting the user's framing rather
+than retrieval — a correct retrieval here still leaves the model free to answer as
+framed.
+
+Two caveats on the set itself, both mine rather than the retriever's:
+
+- **`indirect` (n=9) and `misconception` (n=15) are too small to read as
+  percentages.** One query moves `indirect` by 11 points. Treat them as spot checks.
+- **Corpus-meta questions are structurally unanswerable by chunk retrieval.** Six of
+  the 19 hybrid misses ask about properties spanning the collection — which documents
+  are Core EIPs, which have a Python reference implementation, which has a Version
+  history section. No single chunk contains those answers, so no chunk retriever can
+  find them; they would need document-level metadata search. They are left in as a
+  known-impossible baseline rather than deleted, but they depress `technical` and
+  `comparison` by ~1pt each and should not be read as retrieval faults.
 
 ## Hybrid retrieval
 
@@ -754,20 +841,24 @@ byte-for-byte. Worth re-checking after any splitter change.
   neither sharply: a combined "in-game currency AND unique items" query scored 0.347
   where each half alone scored 0.534 and 0.417. Query decomposition belongs in the
   retrieval stage, not the embedder.
-- **Small documents under-retrieve.** Chunk count correlates with hit@1 at +0.41.
-  `erc-2771` (14 chunks) accounts for 3 of the 4 eval misses, losing to `erc-4337`
-  (69 chunks) on every "someone else pays the fee" phrasing. But size is not
-  destiny: `erc-1271` scores 7/7 on 13 chunks, because its questions use its own
-  vocabulary. `erc-55` (5 chunks, 4 of them raw code) has almost no prose to match.
+- **Small documents under-retrieve.** Confirmed on the 527 set: `erc-2771`
+  (14 chunks) is 62.9% R@1 / 88.6% R@5, the worst R@5 but one, still losing to
+  `erc-4337` (69 chunks) on "someone else pays the fee" phrasings; `erc-20`
+  (13 chunks) is 60.9% R@1, losing fungible-token questions to `erc-1155`. But size
+  is not destiny: `erc-1271` scores 90.9% / 100% on 13 chunks, because its questions
+  use its own vocabulary (`isValidSignature`, the magic value). `erc-55` (5 chunks, 4
+  of them raw code) has almost no prose to match and sits at 87.5% R@5.
 - Batches run sequentially and batch size counts texts, not tokens. Voyage's real
   limit is 120k tokens per request, which a batch of long chunks can hit while well
   under its 1000-item cap.
 - **No relevance threshold is possible in either mode.** Answerable and unanswerable
-  queries produce overlapping Top-1 score ranges (0.29-0.72 vs 0.26-0.56), so
-  retrieval cannot tell a generation stage "I found nothing." Hybrid mode does not
-  help and structurally cannot: RRF scores are positional, so they carry even less
-  relevance signal than raw cosine. Fixing this needs a signal cosine does not
-  provide — a reranker, or an LLM judging the retrieved text.
+  queries produce overlapping Top-1 score ranges (0.2609-0.8064 vs 0.2615-0.6466 over
+  467 and 60 queries), so retrieval cannot tell a generation stage "I found nothing."
+  Widening the negative set from 10 to 60 widened the overlap from 0.27 to 0.3857 —
+  more evidence for the same conclusion, not less. Hybrid mode does not help and
+  structurally cannot: RRF scores are positional, so they carry even less relevance
+  signal than raw cosine. Fixing this needs a signal cosine does not provide — a
+  reranker, or an LLM judging the retrieved text.
 - **Re-ingestion after a content edit is not wired up.** `deleteDocument` exists and
   works, but `npm run index` only upserts. A document that re-chunks into fewer
   pieces leaves orphan points behind. This is not hypothetical: the chunker rework
@@ -792,23 +883,35 @@ byte-for-byte. Worth re-checking after any splitter change.
   mechanically — only by reading both.
 - No token accounting before the call. K chunks are sent whatever their size, and an
   over-length prompt is caught as a 400 from OpenAI rather than prevented.
-- Answer quality is unmeasured. `eval:retrieval` scores Recall@K; nothing scores
-  whether the answer was faithful to what was retrieved. This matters most in
+- Answer quality is unmeasured, though the labels for it now exist. Every answerable
+  row in `eval/queries.json` carries a reference `answer` and a `facts` array of the
+  claims a correct answer must contain, but no script reads them — `eval:retrieval`
+  scores Recall@K and nothing scores whether the answer was faithful to what was
+  retrieved. `facts` is deliberately a list of short claims rather than prose so it
+  can be scored either by substring matching or by an LLM judge without rewriting the
+  labels. This matters most in
   synthesis mode, where the output is code: a run that generated a correct ERC-20
   contract did so *without* the `Methods (overview)` chunk in its top 10, meaning the
   signatures came partly from training weights. They happened to be right. Nothing in
   the pipeline would have caught it if they were not, which is exactly what
   synthesis rule 2 exists to prevent and cannot enforce alone.
-- **`product` queries are the open retrieval problem.** 36-43% R@1 and 71% R@5,
-  unchanged by hybrid retrieval. These are questions phrased as goals ("I want users
-  to...", "how do I create unique items for my game") with no vocabulary in common
-  with the spec. A cross-encoder reranker is the next thing to try, since it reads
-  the query-document pair rather than matching tokens or averaging a vector; query
-  rewriting is the other half.
+- **`product` queries are the open retrieval problem.** 58-60% R@1 and 81.3% R@5,
+  unchanged by hybrid retrieval (which costs one query at R@1 here). These are
+  questions phrased as goals ("I want users to...", "how do I create unique items for
+  my game") with no vocabulary in common with the spec. A cross-encoder reranker is
+  the next thing to try, since it reads the query-document pair rather than matching
+  tokens or averaging a vector; query rewriting is the other half. With n=48 on the
+  527 set this is now measurable enough to tune against.
+- **Multi-document recall is the weakest real number in the suite.** 31.4% of
+  comparison-style questions retrieve *every* document they need, against 90.2% for
+  at least one. Recall@K as scored hides this by design. Raising K is the obvious
+  lever and is untested; per-document diversity in the ranking (MMR, or one slot per
+  document) is the other.
 - **BM25 tuning is measured on one query, not swept.** `k=2` and `bm25Weight=0.5`
-  came from a sweep over a single question and were then confirmed not to hurt the
-  60-query set. `k1`/`b` are at textbook defaults, unexamined. `--rrf-k` and
-  `--bm25-weight` are exposed so this can be done properly.
+  came from a sweep over a single question, were confirmed not to hurt the 60-query
+  set, and now hold up on 527 (+8 queries at R@5, −2 broken) — but that is still a
+  confirmation, not a sweep. `k1`/`b` are at textbook defaults, unexamined. `--rrf-k`
+  and `--bm25-weight` are exposed so this can be done properly.
 - **The BM25 index is rebuilt from `data/chunks.json` on every run**, and nothing
   checks it against what Qdrant holds. A stale chunks file ranks ids the collection
   no longer has; those are skipped, silently shortening results.
