@@ -58,8 +58,24 @@ export interface RetrievedChunk {
   chunkId: string;
   documentId: string;
   text: string;
-  /** Cosine similarity, roughly 0..1 here. Higher is more similar. */
-  score: number;
+  /**
+   * Cosine similarity, roughly 0..1 here. Higher is more similar.
+   *
+   * Under hybrid retrieval this is still the *dense* score, and it is
+   * `undefined` — not 0 — for a chunk only the lexical half found. A 0 there
+   * would read as "maximally dissimilar" when the truth is "not scored by
+   * this retriever", and printing it beside real scores made the output
+   * look sorted-but-broken.
+   */
+  score?: number;
+  /**
+   * Position in the returned ranking, 1-based. Under fusion this is the
+   * authoritative order — `score` is diagnostic and need not be monotonic,
+   * because the two retrievers' scores are not on a comparable scale.
+   */
+  rank?: number;
+  /** Which retrievers found this chunk, and where. Present only for hybrid. */
+  retrievedBy?: Record<string, number>;
   metadata: {
     eipNumber?: number;
     title?: string;

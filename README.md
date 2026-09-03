@@ -4,7 +4,8 @@ A RAG pipeline over Ethereum EIP/ERC specifications, in TypeScript.
 
 Stages are separate and independently runnable: the loader reads disk, the chunker
 is a pure function, the embedder is the only stage that talks to a network. Loader
-(done), chunker (done), embeddings (done), vector store (done), generation (not built).
+(done), chunker (done), embeddings (done), vector store (done), retrieval (dense +
+hybrid, done), generation (not built).
 
 ## Setup
 
@@ -51,8 +52,11 @@ npm run verify                    # prove the collection holds what it should
 npm run retrieve                  # Top-K for a built-in probe set
 npm run retrieve -- "How can a smart contract verify a signature?" --k=5
 npm run retrieve -- --chars=800   # more of each chunk's text
+npm run retrieve -- --hybrid      # dense + BM25, fused by rank
 
 npm run eval:retrieval            # Recall@1/3/5 against eval/queries.json
+npm run eval:retrieval -- --hybrid
+npm run eval:retrieval -- --hybrid --bm25-weight=0.3 --rrf-k=5
 npm run eval:retrieval -- --out=eval/retrieval-openai.json
 
 npm run build                     # type-check and compile to dist/
@@ -81,6 +85,7 @@ src/embed.ts      dev script: run embedding
 src/search.ts     dev script: semantic search over an index
 src/eval.ts       dev script: score a labelled query set
 src/vectorstore/  types.ts, pointId.ts, qdrant.ts, retriever.ts, connect.ts, index.ts
+src/retrieval/    bm25.ts, fuse.ts, hybridRetriever.ts, index.ts
 src/index-chunks.ts   dev script: load embeddings into Qdrant
 src/verify.ts     dev script: inspect the stored collection
 src/retrieve.ts   dev script: Top-K retrieval against Qdrant
@@ -365,40 +370,142 @@ if Recall@5 is poor, nothing downstream can recover, because the answer was neve
 retrieved. Recall is scored on the *document*, not the chunk — which of eip-1559's
 30 chunks surfaced is not the question.
 
-text-embedding-3-small, 418 chunks, 50 answerable queries:
+text-embedding-3-small, 418 chunks, 50 answerable queries, K=5:
 
-```
-Recall@1  36/50  72.0%
-Recall@3  40/50  80.0%
-Recall@5  42/50  84.0%
+| Metric | Dense | Hybrid |
+|---|--:|--:|
+| Recall@1 | 72.0% | 70.0% |
+| Recall@3 | 80.0% | **84.0%** |
+| Recall@5 | 84.0% | **88.0%** |
 
-By type:                          By difficulty:
-  comparison  n=11  R@5  82%        easy    n=14  R@5  86%
-  indirect    n= 5  R@5  80%        medium  n=26  R@5  81%
-  natural     n= 6  R@5 100%        hard    n=10  R@5  90%
-  product     n=14  R@5  71%
-  technical   n=14  R@5  93%
-```
+By type (Recall@5):
+
+| Type | n | Dense | Hybrid |
+|---|--:|--:|--:|
+| natural | 6 | 100% | 100% |
+| technical | 14 | 93% | **100%** |
+| comparison | 11 | 82% | **91%** |
+| indirect | 5 | 80% | 80% |
+| product | 14 | 71% | 71% |
 
 The breakdowns are where the signal is; the aggregate hides it.
 
-- **`indirect` is the weak spot at 60%**, not `hard` (90%). Difficulty labels track
-  how hard the *concept* is; retrieval instead fails on how far the phrasing sits
-  from the document's own vocabulary. `technical` questions score 93% because they
-  reuse the spec's words — `supportsInterface`, `isValidSignature`.
-- **`natural` scores 100% and `product` 79%** on the same underlying standards. A
-  product framing ("I want to make sure a user hasn't typed an invalid address")
-  describes a goal; the document describes a mechanism. q05 misses entirely at R@5
-  while q04, the same standard asked as a question about capitalisation, lands at
-  R@1. This is the query-rewriting-shaped hole.
-- **Negatives do not separate.** Answerable queries score 0.30-0.68 at Top-1;
-  negatives 0.33-0.61. The ranges overlap by 0.31, so no single score threshold
-  distinguishes "found it" from "found nothing". q59 ("How do I write a Solidity
-  function that transfers tokens?") scores 0.6123 — higher than 30 of the 50 real
-  questions — because it is genuinely about the same topic as ERC-20 while not being
-  answerable from it. **Topical similarity is not answerability**, and cosine
-  measures only the first. A generation stage cannot use a score cutoff to decide
-  whether to answer.
+- **Hybrid buys depth, not top-1.** +4pts at both R@3 and R@5, and −1 query at R@1.
+  That is the known tradeoff of rank fusion: RRF rewards agreement between the two
+  retrievers, which promotes chunks both find and can displace a chunk one of them
+  ranked first alone.
+- **It helps where identifiers appear, which is not where it was aimed.** `technical`
+  (93→100%) and `comparison` (82→91%) improved, because those queries contain literal
+  tokens — `supportsInterface`, `isValidSignature`, a standard's number — and that is
+  exactly what BM25 sees sharply. `product` queries are vague natural language ("create
+  unique digital items for my game") with no distinctive keywords, so BM25 contributes
+  mostly noise and the category is unchanged at 71%. Hybrid retrieval was added to fix
+  `product`; it did not.
+- **`indirect` and `product` remain the weak spots.** Difficulty labels track how hard
+  the *concept* is; retrieval instead fails on how far the phrasing sits from the
+  document's own vocabulary. A product framing describes a goal, the document
+  describes a mechanism, and no amount of lexical matching bridges that — this is the
+  query-rewriting- and reranker-shaped hole.
+- **Negatives still do not separate.** Answerable queries score 0.29-0.72 at Top-1;
+  negatives 0.26-0.56, overlapping by 0.27. q59 ("How do I write a Solidity function
+  that transfers tokens?") outscores 30 of the 50 real questions because it is
+  genuinely about ERC-20's topic while not being answerable from it. **Topical
+  similarity is not answerability**, and cosine measures only the first. Fusion makes
+  this worse rather than better: RRF scores are positional, so they carry even less
+  "is anything here relevant?" signal than a raw cosine score. A score threshold is
+  not available as an "I don't know" mechanism in either mode.
+
+## Hybrid retrieval
+
+```
+question ─┬─> embedQuery -> Qdrant search ──> ranked ids ─┐
+          └─> tokenize ───> BM25 index ─────> ranked ids ─┴─> RRF -> Top-K
+```
+
+`HybridRetriever` implements the same `Retriever` interface as `QdrantRetriever`, so
+every script works unchanged and the two are compared by swapping one constructor.
+Both retrievers are asked for `K x 4` candidates before fusion — fusion can only
+promote a chunk some list returned, so a pool equal to K leaves nothing to reorder.
+
+**Scores are optional, and rank is authoritative.** `RetrievedChunk.score` is the
+dense cosine score, and it is `undefined` for a chunk only BM25 found — not 0, which
+would read as "maximally dissimilar" when the truth is "never scored in the
+embedding space". Printing a placeholder 0 beside real scores made output look
+sorted-but-broken, and made the spread line equal the top score, which looked like
+perfect discrimination while meaning the opposite. Under fusion the displayed scores
+are diagnostic and legitimately non-monotonic; `rank` and `retrievedBy` carry the
+real ordering:
+
+```
+  [1] 0.4375  EIP-1559  Specification   [dense+bm25]
+  [2] 0.4325  EIP-1559  Specification   [dense]
+  [5] 0.3661  EIP-1559  Abstract        [dense+bm25]
+  top 0.4375 · spread 0.0791 (over 8 scored)
+```
+
+`[bm25]` alone on an off-topic chunk is the tell that the query shared a
+rare-looking term with it and nothing more — the first thing worth checking when a
+hit looks wrong.
+
+BM25 is implemented in `src/retrieval/bm25.ts` rather than pulled in. The corpus is a
+few hundred chunks already in memory, so the index is two maps built at startup; a
+search server would be a second piece of infrastructure to run, keep in sync with
+Qdrant, and reason about when the two disagree.
+
+**Why rank fusion and not score fusion.** Cosine lands in a narrow band (0.26-0.72
+here) while BM25 is unbounded and scales with query length and term rarity, so the
+two cannot be added. Min-max normalising each list is worse than it looks: it makes
+the top hit 1.0 by construction whether it scored 0.72 or 0.31, discarding the one
+thing a low top score does tell you. RRF uses only position, so agreement between
+methods is what promotes a chunk.
+
+**`k=2`, not the conventional 60.** RRF's smoothing constant sets how sharply rank 1
+beats rank 2, and 60 comes from fusing many lists over web-scale corpora. Over 418
+chunks and two lists it makes positions 1 and 12 differ by ~18% (1/61 vs 1/72), so
+merely *appearing in both lists* outweighed *ranking first in either*: junk that
+placed mid-list in both floated above the correct answer at dense rank 1.
+
+```
+k=60  ->  1. EIP-721 References {dense:12, bm25:3}   <- noise wins
+          7. EIP-20 Methods (overview) {dense:2}     <- the answer
+k=2   ->  2. EIP-20 Methods (overview)
+```
+
+BM25 also carries half weight. It is the more brittle half here: short link-list and
+"Implementation" sections score highly on term density while containing no answer.
+
+**Tokenization is where most of the work is.** Three decisions, each fixing a
+measured failure:
+
+- **Identifiers are indexed whole and split.** `balanceOf` is indexed as `balanceof`
+  and as `balance` + `of`, so a user typing either reaches it.
+- **Single digits survive.** Dropping one-character tokens as noise is right for
+  letters and wrong for digits: "type-2 transaction" tokenized to just `type`, so
+  the query became "explain type transactions" and matched EIP-712's *typed*
+  structured data (7.40) and EIP-1's *types of EIP* above EIP-1559's actual
+  envelope.
+- **Transaction types are canonicalised across notations.** Readers ask for "type-2"
+  or "type 2"; the specs write `0x02 || rlp([...])`. Both collapse to `txtype2`.
+  Nothing else bridges those vocabularies, and after the fix EIP-1559's
+  Specification and Abstract rank 1-2 for "what is type-2 transactions" where they
+  were 6th and absent.
+- **Standard references are canonicalised.** `ERC-20`, `erc 20`, `ERC20`, `EIP-20`
+  and `eip20` all name one document, but a plain tokenizer turns the hyphenated forms
+  into a stopword plus a bare `20` — an identity shared with every other 20 in the
+  corpus. All spellings collapse to one `std20` term.
+- **"Is" is distinguished from "mentions".** `std20` alone was actively misleading:
+  it occurs in **35 chunks across 8 different EIPs**, only 13 of them actually EIP-20,
+  because other standards cite ERC-20 constantly ("unlike ERC-20...", "compatible
+  with ERC-20"). Matching it retrieved *discussions of* ERC-20 rather than ERC-20. So
+  `embedText` carries a `doc20` marker that only the owning document's chunks have,
+  and a query's `std20` is expanded to also target `doc20` — corpus text never is.
+  After this, BM25 alone returns all-EIP-20 for "what functions do I need in my ERC20
+  contract".
+
+Corpus-specific stopwords matter too: "ethereum", "standard", "contract", "must"
+appear in nearly every document and behave like function words *here*, making every
+query match every document a little — the same flat-score problem hybrid retrieval
+was added to fix.
 
 ## Design notes
 
@@ -468,15 +575,16 @@ byte-for-byte. Worth re-checking after any splitter change.
 - The loader reads one flat directory. Nested dirs need `{ recursive: true }` in
   `findMarkdownFiles`; `relativePath` already handles nesting, so ids stay stable.
 - Chunk size counts characters, not tokens. The two diverge on code-heavy passages.
-- **Exact identifiers retrieve poorly.** "What is EIP-712?" returns `eip-1`, because
-  0 of the 40 `eip-712` chunks contain the string "EIP-712" — the body never names
-  itself, and `eip-1` has a section literally titled "What is an EIP?". Prepending
-  the title and EIP number to each chunk did not fix it: the bare string `"EIP-712"`
-  scores 0.919 against the query, but wrapped in a sentence it drops to 0.590, below
-  `eip-1`'s 0.781. Embeddings encode topic, not tokens. Still true through Qdrant:
-  "What is EIP-712?" returns eip-1 at rank 1 (0.6288). The fix is hybrid search —
-  keyword matching for identifiers alongside vectors for concepts. `eipNumber` is now
-  stored on every point, so the filterable side of that is already in place.
+- **Exact identifiers retrieve poorly in dense mode, and `--hybrid` only partly
+  fixes it.** "What is EIP-712?" returns `eip-1` at rank 1, because the body never
+  names itself and `eip-1` has a section literally titled "What is an EIP?".
+  Embeddings encode topic, not tokens: the bare string `"EIP-712"` scores 0.919
+  against the query, but wrapped in a sentence it drops to 0.590. BM25 plus the
+  `doc712` marker addresses the mechanism directly and lifted `technical` queries to
+  100% R@5 — but "What is EIP-712?" still retrieves an `eip-712` Copyright chunk at
+  rank 1, which is the right document for the wrong reason. Section-level weighting
+  (boilerplate sections like Copyright and References should not outrank
+  Specification) is the remaining piece.
 - **Multi-concept questions dilute.** One vector averaging two topics matches
   neither sharply: a combined "in-game currency AND unique items" query scored 0.347
   where each half alone scored 0.534 and 0.417. Query decomposition belongs in the
@@ -489,10 +597,12 @@ byte-for-byte. Worth re-checking after any splitter change.
 - Batches run sequentially and batch size counts texts, not tokens. Voyage's real
   limit is 120k tokens per request, which a batch of long chunks can hit while well
   under its 1000-item cap.
-- **No relevance threshold is possible yet.** Answerable and unanswerable queries
-  produce overlapping Top-1 score ranges (0.30-0.68 vs 0.33-0.61), so retrieval
-  cannot currently tell a generation stage "I found nothing." Fixing this needs a
-  signal cosine does not provide — a reranker, or an LLM judging the retrieved text.
+- **No relevance threshold is possible in either mode.** Answerable and unanswerable
+  queries produce overlapping Top-1 score ranges (0.29-0.72 vs 0.26-0.56), so
+  retrieval cannot tell a generation stage "I found nothing." Hybrid mode does not
+  help and structurally cannot: RRF scores are positional, so they carry even less
+  relevance signal than raw cosine. Fixing this needs a signal cosine does not
+  provide — a reranker, or an LLM judging the retrieved text.
 - **Re-ingestion after a content edit is not wired up.** `deleteDocument` exists and
   works, but `npm run index` only upserts. A document that re-chunks into fewer
   pieces leaves orphan points behind. This is not hypothetical: the chunker rework
