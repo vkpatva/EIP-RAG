@@ -42,6 +42,9 @@ function flag(name: string, fallback: string): string {
 }
 
 const inPath = flag("in", "data/embeddings.json");
+const hybrid = process.argv.includes("--hybrid");
+const rrfK = Number(flag("rrf-k", "2"));
+const bm25Weight = Number(flag("bm25-weight", "0.5"));
 const queriesPath = flag("queries", "eval/queries.json");
 const k = Number(flag("k", "5"));
 const limit = Number(flag("limit", "0"));
@@ -53,12 +56,16 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const all = JSON.parse(await readFile(queriesPath, "utf8")) as EvalQuery[];
 const queries = limit > 0 ? all.slice(0, limit) : all;
 
-const { retriever, model, dimensions, pointsCount, repository } =
-  await connect(inPath);
+const { retriever, model, dimensions, pointsCount, repository, mode } =
+  await connect(inPath, {
+  hybrid,
+  weights: { dense: 1, bm25: bm25Weight },
+  rrfK,
+});
 
 console.log(
   `${repository.collection} · ${pointsCount} points · ${model} · ` +
-    `${dimensions} dims · ${queries.length} queries · top ${k}\n`,
+    `${dimensions} dims · ${mode} · ${queries.length} queries · top ${k}\n`,
 );
 
 /** "eip-1559.md" -> "eip-1559", so hits line up with the `expect` labels. */
@@ -124,7 +131,14 @@ try {
       difficulty: query.difficulty,
       expected: query.expect,
       retrieved: ranked,
-      topScore: hits[0]?.score ?? 0,
+      // The best *dense* score among the hits, not `hits[0].score`. Under
+      // hybrid the top-ranked chunk can be a lexical-only hit with no score,
+      // and coercing that to 0 would drag the score-separation stats toward a
+      // floor that no retriever actually produced.
+      topScore: Math.max(
+        0,
+        ...hits.map((h) => h.score).filter((x): x is number => x !== undefined),
+      ),
       recall,
     });
 
@@ -219,7 +233,7 @@ if (outPath) {
   await mkdir(path.dirname(outPath), { recursive: true });
   await writeFile(
     outPath,
-    JSON.stringify({ model, dimensions, k, rows }, null, 1),
+    JSON.stringify({ model, dimensions, mode, k, rows }, null, 1),
     "utf8",
   );
   console.log(`\nWrote ${outPath}`);

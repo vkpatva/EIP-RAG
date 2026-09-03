@@ -14,7 +14,9 @@
     "index": "tsx --env-file-if-exists=.env src/index-chunks.ts",
     "verify": "tsx --env-file-if-exists=.env src/verify.ts",
     "retrieve": "tsx --env-file-if-exists=.env src/retrieve.ts",
-    "eval:retrieval": "tsx --env-file-if-exists=.env src/eval-retrieval.ts"
+    "eval:retrieval": "tsx --env-file-if-exists=.env src/eval-retrieval.ts",
+    "generate": "tsx --env-file-if-exists=.env src/generate.ts",
+    "experiment": "tsx --env-file-if-exists=.env src/experiment-context.ts"
   },
   "repository": {
     "type": "git",

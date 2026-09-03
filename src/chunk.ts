@@ -23,6 +23,8 @@ function numberFlag(name: string, fallback: number): number {
 
 const chunkSize = numberFlag("size", DEFAULT_CHUNK_OPTIONS.chunkSize);
 const chunkOverlap = numberFlag("overlap", DEFAULT_CHUNK_OPTIONS.chunkOverlap);
+const minChunkSize = numberFlag("min", DEFAULT_CHUNK_OPTIONS.minChunkSize);
+const synthesizeOverviews = !process.argv.includes("--no-overviews");
 const dryRun = process.argv.includes("--dry");
 const outPath =
   process.argv.find((a) => a.startsWith("--out="))?.split("=")[1] ??
@@ -31,11 +33,11 @@ const outPath =
 const { documents, errors } = await loadDocuments();
 for (const err of errors) console.error(`ERROR ${err.filePath}: ${err.message}`);
 
-const chunks = chunkDocuments(documents, { chunkSize, chunkOverlap });
+const chunks = chunkDocuments(documents, { chunkSize, chunkOverlap, minChunkSize, synthesizeOverviews });
 
 console.log(
   `${documents.length} documents -> ${chunks.length} chunks ` +
-    `(size=${chunkSize}, overlap=${chunkOverlap})\n`,
+    `(size=${chunkSize}, overlap=${chunkOverlap}, min=${minChunkSize})\n`,
 );
 
 // Per-document counts, so an unexpected split is easy to spot.
