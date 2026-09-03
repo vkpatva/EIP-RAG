@@ -1,0 +1,9790 @@
+{
+ "model": "text-embedding-3-small",
+ "dimensions": 1536,
+ "mode": "hybrid",
+ "k": 5,
+ "rows": [
+  {
+   "id": "q001",
+   "q": "What is an Ethereum Improvement Proposal?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.65758306,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q002",
+   "q": "What are the three types of EIP?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6642813,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q003",
+   "q": "What are the four categories of a Standards Track EIP?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.70324075,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q004",
+   "q": "What statuses can an EIP move through from idea to finished standard?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6390132,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q005",
+   "q": "How long is the Last Call review window for an EIP?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.5452202,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q006",
+   "q": "What happens to an EIP that nobody works on for six months?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.54969263,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q007",
+   "q": "What does the Living status mean for an EIP, and which EIP is the notable example?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6314071,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q008",
+   "q": "If an author gives up on their proposal permanently, what status applies and can the number be reused?",
+   "type": "natural",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "eip-7702"
+   ],
+   "topScore": 0.4238764,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q009",
+   "q": "I have an idea for changing Ethereum. Where do I propose it and how does it become an accepted standard?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-20"
+   ],
+   "topScore": 0.5262357,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q010",
+   "q": "Who decides how Ethereum standards are proposed, discussed, reviewed, and accepted?",
+   "type": "natural",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.5463755,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q011",
+   "q": "What sections must every successful EIP contain?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.7035168,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q012",
+   "q": "Is the Security Considerations section optional in an EIP?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.69682276,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q013",
+   "q": "What is the character limit on an EIP title and description?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-55"
+   ],
+   "topScore": 0.61425006,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q014",
+   "q": "What goes in the requires header of an EIP?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.7334373,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q015",
+   "q": "When should I write EIP-X versus ERC-X when referring to a proposal?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6086113,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q016",
+   "q": "Does the discussions-to header accept a link to a GitHub pull request?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.45560396,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q017",
+   "q": "Do I need to be a named author with an email to submit an EIP, or can I stay anonymous?",
+   "type": "natural",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.657416,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q018",
+   "q": "What extra requirement applies to a Core EIP that changes the EVM?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6710849,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q019",
+   "q": "Why does a Core EIP need a client implementation before it can be Final?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6932148,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q020",
+   "q": "Can I take over an EIP whose author has gone silent?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.65111244,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q021",
+   "q": "Where should images and diagrams for an EIP be stored?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.73860633,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q022",
+   "q": "Should RFC 2119 keywords like MUST and SHOULD appear throughout an EIP?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-2771"
+   ],
+   "topScore": 0.7766668,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q023",
+   "q": "Why does the EIP process document warn about contentious non-technical issues?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6413746,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q024",
+   "q": "What document was the EIP process derived from?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.65308976,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q025",
+   "q": "What is the minimum set of functions an ERC-20 token must implement?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.6077736,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q026",
+   "q": "I'm building a game where players can buy coins and spend them on items. How should I represent the coins?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.3838622,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q027",
+   "q": "What do the two events in ERC-20 signal?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.5598655,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q028",
+   "q": "What does the decimals function on a token actually mean?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.5162994,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q029",
+   "q": "Should a token transfer of zero tokens be rejected?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.5468833,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q030",
+   "q": "What is the difference between transfer and transferFrom in ERC-20?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.638621,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q031",
+   "q": "I want a contract to be able to pull tokens from a user's balance when the user triggers an action. How is that set up?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "eip-7702"
+   ],
+   "topScore": 0.43447465,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q032",
+   "q": "What is the known hazard with changing an existing ERC-20 allowance?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "eip-1559",
+    "eip-7702",
+    "erc-721"
+   ],
+   "topScore": 0.50338954,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q033",
+   "q": "Can I assume an ERC-20 transfer never returns false?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.5212209,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q034",
+   "q": "Why did anyone bother standardizing a token interface at all?",
+   "type": "natural",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-165",
+    "erc-1155",
+    "erc-2771"
+   ],
+   "topScore": 0.59897494,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q035",
+   "q": "What does the allowance function tell me?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-4337"
+   ],
+   "topScore": 0.51181555,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q036",
+   "q": "Are ERC-20 name and symbol reliable fields to build my UI on?",
+   "type": "natural",
+   "difficulty": "hard",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5413166,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q037",
+   "q": "Why do some Ethereum addresses contain both uppercase and lowercase letters?",
+   "type": "natural",
+   "difficulty": "easy",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.54545164,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q038",
+   "q": "I want to make sure a user hasn't accidentally typed an invalid Ethereum address before sending money.",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "topScore": 0.41552287,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q039",
+   "q": "Exactly how does EIP-55 decide which letters to capitalize?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55",
+    "eip-1"
+   ],
+   "topScore": 0.5575352,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q040",
+   "q": "What exactly gets fed into the keccak256 hash when computing an address checksum?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55",
+    "eip-1559"
+   ],
+   "topScore": 0.62006426,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q041",
+   "q": "How strong is the EIP-55 checksum, and how does it compare to alternatives?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.63731027,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q042",
+   "q": "Why was a mixed-case checksum chosen instead of adding extra characters to the address?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.7486057,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q043",
+   "q": "Is an all-lowercase Ethereum address valid?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.5247688,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q044",
+   "q": "A user pasted an Ethereum address into my application. How can I detect likely typing mistakes?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55",
+    "eip-1"
+   ],
+   "topScore": 0.41198167,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q045",
+   "q": "What happens if an address contains a character that isn't valid hex?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55",
+    "eip-712"
+   ],
+   "topScore": 0.53282243,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q046",
+   "q": "What is the purpose of the supportsInterface function?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.4898879,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q047",
+   "q": "My application needs to know whether another contract supports a particular feature before calling it. How can it check?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165",
+    "erc-2771"
+   ],
+   "topScore": 0.53492564,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q048",
+   "q": "What is the ERC-165 interface identifier, and how is it derived?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.6825402,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q049",
+   "q": "How is an interface identifier computed in ERC-165?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.7047699,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q050",
+   "q": "What is the exact procedure for detecting whether a contract implements ERC-165 at all?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.7065463,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q051",
+   "q": "Why does the ERC-165 detection procedure bother making a second call with 0xffffffff?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.5781704,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q052",
+   "q": "Is there a gas limit on supportsInterface?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.47914073,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q053",
+   "q": "Should I implement supportsInterface with a mapping or with a chain of comparisons?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.52883923,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q054",
+   "q": "I have a contract address, but I don't know what kind of functionality it supports. Is there a standard way to find out?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165",
+    "erc-721"
+   ],
+   "topScore": 0.5349375,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q055",
+   "q": "Why was interface detection needed in the first place?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.48627344,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q056",
+   "q": "One mapping entry in an ERC-165 implementation must never be set to true. Which one and why?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-165"
+   ],
+   "topScore": 0.48637953,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q057",
+   "q": "I want my application to behave differently depending on what capabilities another contract provides.",
+   "type": "indirect",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-165",
+    "eip-712"
+   ],
+   "topScore": 0.4047631,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q058",
+   "q": "I want users to sign an agreement, but I want the wallet to clearly show what they are agreeing to instead of displaying unreadable data.",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "eip-712",
+    "erc-1271"
+   ],
+   "topScore": 0.4345764,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q059",
+   "q": "How can I create a human-readable signing request for something like 'buy this item for 5 tokens'?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.43959934,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q060",
+   "q": "My users keep getting confused by long strings of random-looking data when signing things. How can I make signing safer and easier to understand?",
+   "type": "indirect",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712",
+    "eip-1559"
+   ],
+   "topScore": 0.50191975,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q061",
+   "q": "How is a typed structured message encoded before signing under EIP-712?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.7544387,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q062",
+   "q": "Why does EIP-712 use a domain separator?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.7181827,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q063",
+   "q": "What fields can go into the EIP-712 domain?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712",
+    "eip-1"
+   ],
+   "topScore": 0.6845025,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q064",
+   "q": "What should a wallet do if the chainId in a typed data domain does not match the active chain?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712",
+    "eip-1559",
+    "eip-7702",
+    "erc-1155"
+   ],
+   "topScore": 0.42544985,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q065",
+   "q": "How is hashStruct defined in EIP-712?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.7845974,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q066",
+   "q": "How does EIP-712 encode a struct's type into a string?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.70386255,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q067",
+   "q": "How are strings and byte arrays encoded inside EIP-712 struct data?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6534605,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q068",
+   "q": "How does EIP-712 encode arrays inside a struct?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6700429,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q069",
+   "q": "What are the atomic types allowed by EIP-712?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.58649623,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q070",
+   "q": "Can I sign a recursive or cyclical data structure with EIP-712?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6453418,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q071",
+   "q": "Why did EIP-712 not just use ABIv2 function signatures for the type hash?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.7456385,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q072",
+   "q": "Why is tight packing not used for EIP-712's encodeData?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.5998589,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q073",
+   "q": "Does EIP-712 protect me against a signature being used twice?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.65278214,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q074",
+   "q": "What frontrunning risk does EIP-712 warn about?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712",
+    "eip-1"
+   ],
+   "topScore": 0.6058019,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q075",
+   "q": "Is it safe to write keccak256(someStruct) in Solidity?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6119909,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q076",
+   "q": "Why can't EIP-712 signing start directly with the domain separator or typeHash?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.7057866,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q077",
+   "q": "What is the difference between how a plain text message and a typed struct are prepared for signing?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.5780303,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q078",
+   "q": "Can a DApp add its own custom fields to the EIP-712 domain?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6218,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q079",
+   "q": "I want every sword in my game to be a unique item that belongs to one player and can be sold to another.",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.28950956,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q080",
+   "q": "I want to create a collection of digital characters where each character can have its own picture, name, and owner.",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.37107456,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q081",
+   "q": "What interfaces must an ERC-721 contract implement?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.641947,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q082",
+   "q": "How is a specific NFT identified globally?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.5428126,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q083",
+   "q": "Can I assume ERC-721 token ids start at 0 and increment?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.60311973,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q084",
+   "q": "Why was uint256 chosen for the NFT identifier?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.63353455,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q085",
+   "q": "What is the difference between transferFrom and safeTransferFrom in ERC-721?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.63798296,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q086",
+   "q": "Who is allowed to transfer an ERC-721 token?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6228374,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q087",
+   "q": "What happens to an NFT's approved address when the token is transferred?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.5792918,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q088",
+   "q": "Why does ERC-721 have no allowance mechanism like ERC-20?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6083081,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q089",
+   "q": "Does ERC-721 specify how tokens are minted and burned?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.56333077,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q090",
+   "q": "Is there an exception to ERC-721's rule that every ownership change emits Transfer?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.5946648,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q091",
+   "q": "Why does ERC-721 have queries about the zero address throw?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.56945413,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q092",
+   "q": "Can an ERC-721 contract refuse a transfer for its own reasons?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.58095384,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q093",
+   "q": "Can NFT ownership be kept private with ERC-721?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.62043893,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q094",
+   "q": "Can a token's metadata URI change after it is minted?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.60381514,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q095",
+   "q": "Why is ERC-721 metadata returned as a string rather than something contracts can consume?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.60719234,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q096",
+   "q": "Why not store all NFT metadata on chain?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.5781259,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q097",
+   "q": "Does ERC-721 scale to very large numbers of tokens?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6074345,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q098",
+   "q": "Why does onERC721Received receive both the operator and the previous owner?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6143397,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q099",
+   "q": "What kinds of assets did ERC-721's authors intend it to represent?",
+   "type": "natural",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.62659377,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q100",
+   "q": "Why is ERC-20 insufficient for tracking NFTs?",
+   "type": "comparison",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6047677,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q101",
+   "q": "Why does ERC-721 require ERC-165 rather than a global interface registry?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-165"
+   ],
+   "topScore": 0.6270907,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q102",
+   "q": "What mutability guarantees do ERC-721 implementations have to respect?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6857854,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q103",
+   "q": "Must a contract implementing ERC721Metadata also implement the core ERC721 interface?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.5996588,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q104",
+   "q": "My game has gold, health potions, bullets, and rare weapons. Some items are identical and others are unique. How should I represent them?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.338857,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q105",
+   "q": "Why was ERC-1155 introduced instead of deploying a separate contract for every game asset?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.68207204,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q106",
+   "q": "What is the ERC-165 identifier for ERC-1155?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6194166,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q107",
+   "q": "What does the _id argument mean in ERC-1155 functions?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6081899,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q108",
+   "q": "Which events must an ERC-1155 contract emit when balances change?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6666072,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q109",
+   "q": "Why does ERC-1155 guarantee that events cover every balance change?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.5915258,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q110",
+   "q": "How do I discover which token ids exist in an ERC-1155 contract?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6166598,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q111",
+   "q": "What must a contract return to accept an ERC-1155 transfer?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6052152,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q112",
+   "q": "What is the ERC-165 identifier for the ERC-1155 token receiver interface?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-165"
+   ],
+   "topScore": 0.6843753,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q113",
+   "q": "When exactly is the ERC-1155 receiver hook called relative to the balance update?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6117377,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q114",
+   "q": "Why does ERC-1155 support single transfers when it already has batch transfers?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.7586969,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q115",
+   "q": "Does ERC-1155 offer an unsafe transfer variant?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.62475896,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q116",
+   "q": "How does the {id} substitution in an ERC-1155 URI work?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.7210059,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q117",
+   "q": "What is the ERC-165 identifier for the ERC-1155 metadata URI extension?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.7224811,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q118",
+   "q": "Can I use the ERC-1155 uri function to check whether a token exists?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6518706,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q119",
+   "q": "Why did ERC-1155 drop the name and symbol functions?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.6903024,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q120",
+   "q": "What does setApprovalForAll do in ERC-1155, and how do I approve only some token ids?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.8052083,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q121",
+   "q": "Does an ERC-1155 owner have to approve themselves as an operator?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5940659,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q122",
+   "q": "How can I mix fungible and non-fungible tokens in the same ERC-1155 contract?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.8063605,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q123",
+   "q": "If an ERC-1155 contract uses split id bits, can an outside observer tell fungible from non-fungible ids?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.7893369,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q124",
+   "q": "Why should clients sort token ids in an ERC-1155 batch transfer?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6824291,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q125",
+   "q": "What does balanceOfBatch give me over balanceOf?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20"
+   ],
+   "topScore": 0.6131005,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q126",
+   "q": "What is the migration burden if I redeploy an ERC-1155 contract at a new address?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "eip-7702"
+   ],
+   "topScore": 0.546994,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q127",
+   "q": "How does a hybrid ERC-1155/ERC-721 contract have to order its recipient checks?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5718043,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q128",
+   "q": "Is a hybrid ERC-1155 and ERC-721 contract recommended?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5710952,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q129",
+   "q": "What does ERC-1155 make possible that separate token contracts did not?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.66974807,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q130",
+   "q": "Can a smart contract approve a signature even though it doesn't have a private key like a normal wallet?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "erc-20"
+   ],
+   "topScore": 0.5003631,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q131",
+   "q": "What magic value must isValidSignature return?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.63329303,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q132",
+   "q": "How can a marketplace verify a signed message when the person signing it is actually a smart contract?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-712"
+   ],
+   "topScore": 0.57189083,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q133",
+   "q": "Why must isValidSignature not modify state?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.5243468,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q134",
+   "q": "Why does ERC-1271 take a bytes32 hash rather than the raw message?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-712"
+   ],
+   "topScore": 0.54657614,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q135",
+   "q": "What kinds of validation logic can an ERC-1271 implementation use?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.6001067,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q136",
+   "q": "Which kinds of contracts should implement ERC-1271?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.5985626,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q137",
+   "q": "What is the motivating use case for ERC-1271?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.587137,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q138",
+   "q": "Why should I not hardcode a gas limit when calling isValidSignature on another contract?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.6802445,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q139",
+   "q": "Whose responsibility is it to make sure an ERC-1271 signature check is actually correct?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.61204064,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q140",
+   "q": "Does ERC-1271 break existing EOA signature verification?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.67464995,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q141",
+   "q": "What does isValidSignature return when the signature is wrong?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.52946347,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q142",
+   "q": "Why does the ERC-1271 reference implementation reject high s values in a signature?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.64968944,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q143",
+   "q": "Why is the function called isValidSignature rather than something about ownership?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.58974016,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q144",
+   "q": "A decentralized application needs to work with wallets controlled by code rather than just normal private keys. How can signatures be handled?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.51315916,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q145",
+   "q": "What is the difference between the base fee and priority fee introduced by EIP-1559?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.68557966,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q146",
+   "q": "Why does sending a transaction sometimes involve a base fee and another amount paid to the block producer?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.54279745,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q147",
+   "q": "How does Ethereum decide how much of a transaction fee is burned and how much goes to the validator?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.60031426,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q148",
+   "q": "What is the transaction format introduced by EIP-1559?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.61117005,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q149",
+   "q": "How fast can the base fee change from one block to the next?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.570717,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q150",
+   "q": "What is the gas target in EIP-1559 and how does it relate to the block gas limit?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.588156,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q151",
+   "q": "What is the initial base fee value at the EIP-1559 fork block?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.643806,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q152",
+   "q": "What was wrong with Ethereum's original first-price gas auction?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-4337"
+   ],
+   "topScore": 0.5736706,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q153",
+   "q": "Why is the base fee burned rather than paid to the miner?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.56429636,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q154",
+   "q": "What did EIP-1559 change about the GASPRICE opcode?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.73553574,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q155",
+   "q": "Do legacy transactions still work after EIP-1559?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.657402,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q156",
+   "q": "Does EIP-1559 change the block hash computation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.68716085,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q157",
+   "q": "How is transaction ordering affected when most users stop competing on fees?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.6774551,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q158",
+   "q": "Could miners attack EIP-1559 by mining empty blocks?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.73713887,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q159",
+   "q": "Does EIP-1559 mean ETH has a fixed supply?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.58038294,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q160",
+   "q": "What risk does EIP-1559's larger maximum block size introduce?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.715593,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q161",
+   "q": "What is the intrinsic gas cost of an EIP-1559 transaction?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "eip-7702"
+   ],
+   "topScore": 0.618567,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q162",
+   "q": "How are transaction fees handled differently before and after Ethereum's newer fee-market design?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.6555104,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q163",
+   "q": "Why does EIP-1559 dynamically expand and contract block sizes?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.6147382,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q164",
+   "q": "Can someone else pay the network fee for my users while the users still approve the action?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.3939726,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q165",
+   "q": "What are the four roles defined in ERC-2771?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-2771"
+   ],
+   "topScore": 0.50506985,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q166",
+   "q": "How does a Recipient contract learn who really sent a meta transaction?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.5622546,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q167",
+   "q": "What does ERC-2771 change at the protocol level?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-1155"
+   ],
+   "topScore": 0.54226875,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q168",
+   "q": "What function must an ERC-2771 recipient expose so wallets can discover meta-transaction support?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.6497388,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q169",
+   "q": "Why does ERC-2771 need a discovery mechanism at all?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-721"
+   ],
+   "topScore": 0.51615524,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q170",
+   "q": "What is the security risk of trusting a forwarder in ERC-2771?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.682941,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q171",
+   "q": "Why isn't securing msg.sender enough for meta transactions?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.66549766,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q172",
+   "q": "Why standardize a forwarder interface instead of letting each contract implement meta transactions itself?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.65883434,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q173",
+   "q": "I want someone to be able to submit an action for another user, as long as the user has already approved that action.",
+   "type": "indirect",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20",
+    "erc-721"
+   ],
+   "topScore": 0.40478536,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q174",
+   "q": "What problem is ERC-2771 trying to solve?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-2771"
+   ],
+   "topScore": 0.57023084,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q175",
+   "q": "What is the role of a bundler in ERC-4337?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.5958686,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q176",
+   "q": "What is a UserOperation and how does it differ from a transaction?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.50522876,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q177",
+   "q": "Does ERC-4337 require changes to Ethereum consensus?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-1155",
+    "eip-1559"
+   ],
+   "topScore": 0.5250524,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q178",
+   "q": "I want my application to let users perform several actions without requiring them to manage a traditional wallet account in the usual way.",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.4592297,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q179",
+   "q": "What is the EntryPoint contract in ERC-4337?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.5534671,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q180",
+   "q": "What is a paymaster in ERC-4337?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6707504,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q181",
+   "q": "What extra steps does the EntryPoint take when a UserOperation has a paymaster?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6229731,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q182",
+   "q": "How does the two-dimensional nonce in ERC-4337 work?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-1155"
+   ],
+   "topScore": 0.5521086,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q183",
+   "q": "How do I make an ERC-4337 account behave like a classic sequential nonce?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6416203,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q184",
+   "q": "What is an aggregator in ERC-4337?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.48547044,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q185",
+   "q": "What is a factory in ERC-4337 and how must it create accounts?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6127553,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q186",
+   "q": "Why must an ERC-4337 account address depend on its initial signature?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.533589,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q187",
+   "q": "How does a wallet find its ERC-4337 account address before the account exists?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.5608213,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q188",
+   "q": "Why isn't initCode called directly from the EntryPoint in ERC-4337?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.59053296,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q189",
+   "q": "What are the ERC-4337 error code prefixes and what do they mean?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-1155",
+    "eip-7702"
+   ],
+   "topScore": 0.4957962,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q190",
+   "q": "What must a bundler exclude when assembling an ERC-4337 bundle?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.55590403,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q191",
+   "q": "What should a bundler do before including an ERC-4337 bundle in a block?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.576849,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q192",
+   "q": "Why does ERC-4337 need a reputation and staking system?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.535304,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q193",
+   "q": "What is the core DoS problem ERC-4337 has to solve?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337",
+    "eip-1"
+   ],
+   "topScore": 0.43403673,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q194",
+   "q": "What is an alternative mempool in ERC-4337?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6749023,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q195",
+   "q": "What are the two primary safety claims the ERC-4337 EntryPoint must be verified against?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702",
+    "erc-1155",
+    "erc-1271"
+   ],
+   "topScore": 0.5165257,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q196",
+   "q": "Is ERC-4337 compatible with smart contract accounts written before it?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6431112,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q197",
+   "q": "Why does concentrating logic in the ERC-4337 EntryPoint reduce total audit burden?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.56572044,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q198",
+   "q": "Why must an ERC-4337 signature depend on the chainid and EntryPoint address?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.57103574,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q199",
+   "q": "What is the PackedUserOperation and why does it exist?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.47990322,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q200",
+   "q": "What is in the paymasterAndData field?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6208287,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q201",
+   "q": "What is a deposit in ERC-4337?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.5302356,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q202",
+   "q": "I want a normal Ethereum account to temporarily gain some smart-contract-like abilities without permanently turning it into a contract.",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.50468683,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q203",
+   "q": "What three features was EIP-7702 designed around?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "eip-1"
+   ],
+   "topScore": 0.6502458,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q204",
+   "q": "What are the EIP-7702 parameter values?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "eip-1"
+   ],
+   "topScore": 0.59883684,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q205",
+   "q": "What does an EIP-7702 authorization tuple contain and what is signed?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.5541612,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q206",
+   "q": "What checks does each EIP-7702 authorization tuple have to pass?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.55661106,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q207",
+   "q": "What happens if one authorization tuple in an EIP-7702 transaction fails?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.5648739,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q208",
+   "q": "Are EIP-7702 delegations rolled back if the transaction reverts?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.56210434,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q209",
+   "q": "Which opcodes see the delegated code rather than the delegation indicator?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.66850185,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q210",
+   "q": "What happens if an EIP-7702 delegation points at another delegation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.59375,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q211",
+   "q": "What happens if an EIP-7702 delegation targets a precompile?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.66958666,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q212",
+   "q": "What does an EIP-7702 transaction cost?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.62641907,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q213",
+   "q": "Can an account with a delegation indicator still send its own transactions?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.5092368,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q214",
+   "q": "Why does EIP-7702 use the 0xef prefix for the delegation indicator?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.6367737,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q215",
+   "q": "What must a secure EIP-7702 delegate contract require a signature over?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-1271"
+   ],
+   "topScore": 0.65752435,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q216",
+   "q": "What is the front-running initialization risk in EIP-7702?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.6150588,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q217",
+   "q": "What storage precautions matter when migrating an EIP-7702 account between delegates?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.7260408,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q218",
+   "q": "What can break when an EIP-7702 transaction sender also sets code on itself?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.60759425,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q219",
+   "q": "How can an EIP-7702 authorizer grief a sponsored transaction relayer?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-2771"
+   ],
+   "topScore": 0.5941745,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q220",
+   "q": "Why does EIP-7702 complicate transaction propagation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.6217737,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q221",
+   "q": "Can an EOA's nonce increase more than once in a single transaction under EIP-7702?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.6820005,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q222",
+   "q": "What alternative to the current EIP-7702 propagation approach did the authors consider?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.5623955,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q223",
+   "q": "Can an existing wallet account temporarily use code to perform more advanced operations?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.49608064,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q224",
+   "q": "Why does EIP-7702 exist when smart contract wallets already do this?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.63283926,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q225",
+   "q": "I want users to interact with my application without having to hold the network's native currency just to pay transaction fees.",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337",
+    "erc-2771"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-4337",
+    "erc-2771"
+   ],
+   "topScore": 0.46354508,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q226",
+   "q": "I don't want my users to worry about buying the network's native coin before they can use my application. What options do I have?",
+   "type": "indirect",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337",
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.38541606,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q227",
+   "q": "What is the difference between letting users pay their own transaction fees and having someone else pay them?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337",
+    "erc-2771"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-4337"
+   ],
+   "topScore": 0.49794602,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q228",
+   "q": "What is the difference between making an existing wallet programmable and creating a new smart wallet?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.4215068,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q229",
+   "q": "How does ERC-4337 accommodate accounts that use EIP-7702 delegation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.64717215,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q230",
+   "q": "I want a wallet to become more programmable without forcing the user to move everything to a completely new account.",
+   "type": "indirect",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.47399187,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q231",
+   "q": "If I want users to sign an action, have someone else submit it, and support smart contract wallets, which standards might be involved?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712",
+    "erc-2771",
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.5267762,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q232",
+   "q": "I need to tell whether a digital asset is one-of-a-kind or whether many copies of the same asset can exist. Which standards support these models?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1271"
+   ],
+   "topScore": 0.55095446,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q233",
+   "q": "What is the difference between ERC-721 and ERC-1155 in terms of asset representation?",
+   "type": "comparison",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.58392286,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q234",
+   "q": "When would I use a unique digital item instead of a system that supports many copies of different items?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.42804652,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q235",
+   "q": "If I am building a game with unique characters and large quantities of consumable items, which asset standards should I consider and why?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.45156845,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q236",
+   "q": "I need a system for game resources where one player might own 50 potions, 10 shields, and one rare character.",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721",
+    "eip-1"
+   ],
+   "topScore": 0.33764243,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q237",
+   "q": "How is a smart contract's ability to approve a signature different from a normal wallet signing a message?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.5224013,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q238",
+   "q": "What is the difference between an EOA signature and a contract-based signature?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.6126994,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q239",
+   "q": "What problem does isValidSignature solve for smart contract wallets?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.6186335,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q240",
+   "q": "How is making an Ethereum address easier to validate different from making a transaction easier to understand?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-55",
+    "eip-712"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.46848404,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q241",
+   "q": "Which standards in this corpus rely on ERC-165 interface detection?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165",
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.6394048,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q242",
+   "q": "Which standards in this corpus deal with paying gas on someone else's behalf, and how do they differ?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.40582946,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q243",
+   "q": "Which standards in this corpus specify a magic return value that a caller must check?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271",
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155",
+    "erc-1271",
+    "erc-4337"
+   ],
+   "topScore": 0.4643755,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q244",
+   "q": "Two standards in this corpus reuse EIP-1559's max fee and priority fee naming. Which, and where?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "eip-1559",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.6068026,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q245",
+   "q": "Both ERC-4337 and EIP-7702 mention atomic multi-operations. How does each achieve it?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.557486,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q246",
+   "q": "Does ERC-4337 support EIP-712 signatures?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.57384276,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q247",
+   "q": "Which standards in this corpus explicitly state that they require no protocol or consensus changes?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-2771",
+    "erc-1155"
+   ],
+   "topScore": 0.4437338,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q248",
+   "q": "I'm choosing between ERC-2771 and ERC-4337 for gasless transactions. What does each require me to change?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-2771"
+   ],
+   "topScore": 0.54234385,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q249",
+   "q": "Both ERC-1271 and EIP-712 come up when verifying signed orders. What does each contribute?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271",
+    "eip-712"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.6093097,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q250",
+   "q": "How do I deploy a Solidity contract to Ethereum mainnet?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "eip-7702",
+    "eip-1559"
+   ],
+   "topScore": 0.3915965,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q251",
+   "q": "What programming language should I use to build a blockchain application?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-1155",
+    "eip-7702",
+    "eip-1",
+    "eip-1559"
+   ],
+   "topScore": 0.32856816,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q252",
+   "q": "How does Ethereum mining work?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.48018372,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q253",
+   "q": "How can I reduce the size of my JavaScript bundle?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "erc-55",
+    "eip-712"
+   ],
+   "topScore": 0.26153058,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q254",
+   "q": "What's the difference between Ethereum and Solana?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "eip-1559",
+    "erc-20"
+   ],
+   "topScore": 0.3768561,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q255",
+   "q": "How do I build a React frontend for my wallet application?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "erc-2771",
+    "erc-721"
+   ],
+   "topScore": 0.3310297,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q256",
+   "q": "What is a Merkle tree and why is it useful?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-712",
+    "erc-4337",
+    "erc-1155"
+   ],
+   "topScore": 0.31639594,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q257",
+   "q": "How can I store images cheaply for my NFT collection?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.4022186,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q258",
+   "q": "How do I write a Solidity function that transfers tokens?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.56336296,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q259",
+   "q": "How do I secure my private key?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-712",
+    "erc-2771",
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.3079365,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q260",
+   "q": "What is the current gas price on Ethereum?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.59473866,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q261",
+   "q": "Which NFT marketplace has the lowest fees?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1559",
+    "erc-20",
+    "erc-721"
+   ],
+   "topScore": 0.43386707,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q262",
+   "q": "How do I set up a local Ethereum development environment?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "eip-1"
+   ],
+   "topScore": 0.34206048,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q263",
+   "q": "What is the total supply of ETH?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-20",
+    "eip-1559",
+    "erc-721"
+   ],
+   "topScore": 0.4207747,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q264",
+   "q": "Who invented Ethereum?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "erc-20",
+    "eip-1559"
+   ],
+   "topScore": 0.42212543,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q265",
+   "q": "How do zero-knowledge rollups scale Ethereum?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "erc-721"
+   ],
+   "topScore": 0.3965962,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q266",
+   "q": "Should I invest in this token?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-20",
+    "erc-1155"
+   ],
+   "topScore": 0.3748191,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q267",
+   "q": "How do I audit a smart contract for vulnerabilities?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "erc-1271",
+    "eip-1",
+    "erc-4337"
+   ],
+   "topScore": 0.4025115,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q268",
+   "q": "What is the block time on Ethereum?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.41608277,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q269",
+   "q": "How do I bridge tokens between Ethereum and a Layer 2?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-1155",
+    "erc-20",
+    "eip-1"
+   ],
+   "topScore": 0.47190648,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q270",
+   "q": "What database should I use to index blockchain events?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.51004374,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q271",
+   "q": "Can you write me a complete NFT smart contract?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.45037395,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q272",
+   "q": "What are the gas costs of a Uniswap swap?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559",
+    "eip-7702"
+   ],
+   "topScore": 0.42739826,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q273",
+   "q": "How does Bitcoin differ from Ethereum's account model?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.492313,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q274",
+   "q": "What wallet should I recommend to my users?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.355737,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q275",
+   "q": "My checkout flow needs a loyalty points balance that users can spend with partner shops. Which standard fits?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-20",
+    "erc-1155",
+    "erc-2771"
+   ],
+   "topScore": 0.35582256,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q276",
+   "q": "Users of my app want to see their token balance. Which function do I call?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20"
+   ],
+   "topScore": 0.45038557,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q277",
+   "q": "Can I find out how many tokens exist in total?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20",
+    "eip-712"
+   ],
+   "topScore": 0.511111,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q278",
+   "q": "What does a token contract emit when new tokens are created?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20"
+   ],
+   "topScore": 0.5221287,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q279",
+   "q": "Are there recommended reference implementations of the token standard?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.6098503,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q280",
+   "q": "Which Solidity version does the token standard's specification use?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5378187,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q281",
+   "q": "My users complain that a single wrong character in an address lost their funds. Is there anything in the standards that would have caught it?",
+   "type": "indirect",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.46073413,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q282",
+   "q": "Show me examples of correctly checksummed Ethereum addresses.",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55",
+    "erc-1155"
+   ],
+   "topScore": 0.60472906,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q283",
+   "q": "Which hash function does the address checksum use?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.6264781,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q284",
+   "q": "Are decimal digits in an address ever changed by the checksum?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55"
+   ],
+   "topScore": 0.56097263,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q285",
+   "q": "Before I call an unknown contract's transfer function, how do I know it is really an NFT contract?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.48237753,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q286",
+   "q": "Does interface detection tell me about a contract's return types and events?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.6011654,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q287",
+   "q": "What is the gas cost of the view-mapping supportsInterface implementation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165",
+    "erc-4337"
+   ],
+   "topScore": 0.51645887,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q288",
+   "q": "What was corrected in the later version of the interface detection standard?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.49232757,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q289",
+   "q": "Which existing system already implemented interface detection when the standard was written?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.5947888,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q290",
+   "q": "A user is about to sign a permit in my dapp. What should their wallet be able to show them?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337",
+    "erc-1155"
+   ],
+   "topScore": 0.46346778,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q291",
+   "q": "What JSON-RPC method does typed data signing add?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6463984,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q292",
+   "q": "Which EIPs does the typed data signing standard require?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.659003,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q293",
+   "q": "Why is a typeHash written as a Solidity constant rather than computed at runtime?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6487446,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q294",
+   "q": "Why must encodeData only be injective within a single type?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.4966812,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q295",
+   "q": "What assumptions does the in-place EVM implementation of hashStruct make?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6185893,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q296",
+   "q": "Is a straightforward EIP-712 implementation optimal for a directed acyclic graph of structs?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.6169957,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q297",
+   "q": "Was including natspec documentation in the type hash considered?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.5786512,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q298",
+   "q": "Does adopting typed data signing break existing dapps?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.5233491,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q299",
+   "q": "Can two different signature requirements on the same struct be distinguished under EIP-712?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.64581704,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q300",
+   "q": "A player wants to sell their in-game character to another player. What does the NFT standard give me for that?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155",
+    "erc-55"
+   ],
+   "topScore": 0.47665948,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q301",
+   "q": "What does setApprovalForAll do in the NFT standard?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.712468,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q302",
+   "q": "How do I count how many NFTs an address owns?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.47925156,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q303",
+   "q": "How do I find who owns a particular NFT?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.44506413,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q304",
+   "q": "Why did the NFT standard settle on the word NFT rather than deed?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6624431,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q305",
+   "q": "Why does the NFT standard say to avoid for and while loops?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.46810666,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q306",
+   "q": "Do transfer functions in the NFT standard have to be payable?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.54793775,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q307",
+   "q": "Can a contract using the NFT standard use public instead of external visibility?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.51609266,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q308",
+   "q": "Where did the ERC-721 image size recommendation come from?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.52183324,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q309",
+   "q": "Which real projects did ERC-721's authors cite as existing or planned NFTs?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.6560143,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q310",
+   "q": "Which prior standards informed the decision that failed NFT transfers should throw?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.58864325,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q311",
+   "q": "Why is it critical that distinguishable assets are not lumped together as numbers in a ledger?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.4559566,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q312",
+   "q": "My marketplace needs to move a player's whole inventory in one transaction. What does the multi-token standard offer?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.5669041,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q313",
+   "q": "Which event tells me a token's metadata URI changed in the multi-token standard?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.67711824,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q314",
+   "q": "If a URI event was emitted, must the uri function agree with it?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.49796343,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q315",
+   "q": "Why does the multi-token standard say upgrades should use a proxy?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.5600928,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q316",
+   "q": "What does the multi-token standard say about approval schemes for subsets of tokens?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.73906803,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q317",
+   "q": "Which token standard should I pick if I expect to create thousands of item types?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.56815493,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q318",
+   "q": "What is a semi-fungible token in the multi-token standard?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.68845373,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q319",
+   "q": "Which implementations does the multi-token standard reference?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.66302097,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q320",
+   "q": "Does the multi-token standard mandate how to split fungible and non-fungible ids?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.7379198,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q321",
+   "q": "My DAO treasury needs to authorize an off-chain order. Can it sign?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.44834638,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q322",
+   "q": "What are the two arguments to isValidSignature and why two?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.55678993,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q323",
+   "q": "What does a contract calling isValidSignature on another contract look like?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.6361778,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q324",
+   "q": "Must isValidSignature allow external calls?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.56995034,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q325",
+   "q": "Why does the reference implementation of isValidSignature reject a zero signer?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.54855525,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q326",
+   "q": "My wallet keeps overpaying gas. What did the fee market change do about that?",
+   "type": "indirect",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.56416595,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q327",
+   "q": "What is the priority fee actually compensating a block producer for?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.5471436,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q328",
+   "q": "What does the max fee per gas field bound?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-4337"
+   ],
+   "topScore": 0.53596306,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q329",
+   "q": "What receipt format does the new fee-market transaction use?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.543043,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q330",
+   "q": "What exactly is signed in an EIP-1559 transaction?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-712",
+    "eip-1559"
+   ],
+   "topScore": 0.57440126,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q331",
+   "q": "Why is it important that the miner of a block does not receive the base fee?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.58128107,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q332",
+   "q": "Which EIPs does the fee market change depend on?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.65088534,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q333",
+   "q": "Why is it absurd to price one extra transaction 10x higher when fees spike?",
+   "type": "natural",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.5389381,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q334",
+   "q": "What does _msgData() mean in the meta transaction standard?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.49959037,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q335",
+   "q": "Show me how a recipient contract extracts the real sender.",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.4795661,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q336",
+   "q": "How does the forwarder pass the signer's address along?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.55958104,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q337",
+   "q": "What should a recipient do if msg.data is shorter than 20 bytes?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-1155",
+    "eip-712",
+    "erc-721"
+   ],
+   "topScore": 0.35327882,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q338",
+   "q": "Why must a recipient check that the forwarder is trusted before reading the appended address?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.59335804,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q339",
+   "q": "Is it acceptable for a recipient to trust several forwarders at once?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-1155"
+   ],
+   "topScore": 0.5697063,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q340",
+   "q": "Whose job is it to verify signatures and nonces in the meta transaction flow?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.5315777,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q341",
+   "q": "My app wants to sponsor a user's first transaction so onboarding is free. What does account abstraction provide?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "topScore": 0.5389159,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q342",
+   "q": "I want users to pay gas in my own token. Is that possible?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.4606756,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q343",
+   "q": "What does a smart contract account have to implement for account abstraction?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.635757,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q344",
+   "q": "Where do UserOperations live before they are included in a block?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.4880957,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q345",
+   "q": "Why do users of account abstraction not need to know a bundler's IP address?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.48200428,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q346",
+   "q": "What gas fields does a UserOperation carry?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.51873434,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q347",
+   "q": "What is the sender field of a UserOperation?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.4328103,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q348",
+   "q": "Why is a UserOperation deliberately not called a transaction?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.46613935,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q349",
+   "q": "Can an account run an administrative operation in parallel with normal ones?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.44932252,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q350",
+   "q": "How does a bundler pick a valid nonce value for a UserOperation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.59822166,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q351",
+   "q": "What is transient storage used for in account abstraction?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6205385,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q352",
+   "q": "Must a bundler check anything about the other transactions in the block?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.4953333,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q353",
+   "q": "What happens to a factory or paymaster that causes a bundle simulation to revert?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.41369796,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q354",
+   "q": "Why does account abstraction say the stake is never slashed?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6010784,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q355",
+   "q": "What does being staked let an entity do that an unstaked one cannot?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.52679574,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q356",
+   "q": "Why is a paymaster a DoS risk, and what mitigates it?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.5180086,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q357",
+   "q": "What is the transaction payload of a set code transaction?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.6449561,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q358",
+   "q": "Can a set code transaction have an empty authorization list?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.603064,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q359",
+   "q": "What field bounds make an authorization tuple invalid?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.40191808,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q360",
+   "q": "How do I remove an EIP-7702 delegation from my account?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.5798526,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q361",
+   "q": "Why is a refund given when the authority account is not empty?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.34521115,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q362",
+   "q": "Is the authority added to the access list?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-1155"
+   ],
+   "topScore": 0.34397757,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q363",
+   "q": "What does EXTCODESIZE return for an account that has delegated?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.55963826,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q364",
+   "q": "Give me a concrete example of what batching would fix.",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-1155",
+    "erc-4337"
+   ],
+   "topScore": 0.3633821,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q365",
+   "q": "What is an example of privilege de-escalation under EIP-7702?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.5371571,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q366",
+   "q": "Who can pay for an EIP-7702 transaction under the sponsorship model?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.52735627,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q367",
+   "q": "Two documents in this corpus define an interface a recipient contract must implement to safely accept tokens. Which are they, and how do they differ?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20"
+   ],
+   "topScore": 0.53692245,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q368",
+   "q": "Which standards in this corpus explicitly leave replay protection to the implementer?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-712",
+    "erc-1155",
+    "erc-4337"
+   ],
+   "topScore": 0.46590865,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q369",
+   "q": "Which documents in this corpus specify a 30,000 gas ceiling or a similar gas guidance for a view function?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165",
+    "erc-2771",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559",
+    "erc-165"
+   ],
+   "topScore": 0.35270575,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q370",
+   "q": "I'm designing a wallet. Which standards in this corpus affect what I have to implement?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712",
+    "erc-1271",
+    "eip-7702",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "eip-7702",
+    "erc-20",
+    "eip-1"
+   ],
+   "topScore": 0.4390525,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q371",
+   "q": "Which two documents in this corpus warn specifically about front-running?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "eip-712",
+    "eip-1",
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.36266017,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q372",
+   "q": "Which standards in this corpus rely on a trusted third party, and what is the trust assumption in each?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-1155"
+   ],
+   "topScore": 0.38551113,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q373",
+   "q": "Both ERC-721 and ERC-1155 handle minting. How does each signal it?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5615463,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q374",
+   "q": "Which documents in this corpus discuss burning value, and in what sense?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559",
+    "erc-721",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "eip-1559",
+    "erc-721",
+    "erc-20"
+   ],
+   "topScore": 0.34747347,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q375",
+   "q": "How do ERC-2771 and ERC-4337 each recover who authorized an action?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337",
+    "erc-721",
+    "erc-2771"
+   ],
+   "topScore": 0.50718546,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q376",
+   "q": "I only want to add gasless transactions with minimal changes to a contract I have already deployed. What is realistic?",
+   "type": "indirect",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-1155"
+   ],
+   "topScore": 0.4990851,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q377",
+   "q": "Which corpus documents describe something that must never be rolled back or reverted?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702",
+    "erc-1155"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-2771"
+   ],
+   "topScore": 0.37630624,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q378",
+   "q": "What does the fee market change say about the elasticity multiplier being raised?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.44363695,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q379",
+   "q": "Can I tell from the EVM how much a miner earned on a transaction after the fee market change?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.5940976,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q380",
+   "q": "Which corpus document is a Meta type EIP rather than Standards Track?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.61000276,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q381",
+   "q": "Which corpus documents are Core EIPs that change the protocol?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6309242,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q382",
+   "q": "Which category is the typed data signing standard filed under?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.53054905,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q383",
+   "q": "Which corpus documents introduce a new EIP-2718 typed transaction?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "eip-1559"
+   ],
+   "topScore": 0.5254727,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q384",
+   "q": "Two corpus documents inherit the same intrinsic gas formula. Which, and what is it?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-4337"
+   ],
+   "topScore": 0.39309013,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q385",
+   "q": "How do I check what price ETH will be next week?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.43321216,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q386",
+   "q": "Which Ethereum client should I run?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "eip-1559"
+   ],
+   "topScore": 0.38219726,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q387",
+   "q": "How do I recover funds sent to the wrong address?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-1155",
+    "erc-2771",
+    "erc-20",
+    "erc-1271"
+   ],
+   "topScore": 0.3206358,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q388",
+   "q": "What is the best way to market my NFT drop?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.35050184,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q389",
+   "q": "How do I run a validator node and earn staking rewards?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559",
+    "erc-1271"
+   ],
+   "topScore": 0.30938143,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q390",
+   "q": "Explain how the Solidity compiler optimizer works.",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-165",
+    "eip-7702",
+    "erc-721"
+   ],
+   "topScore": 0.34111533,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q391",
+   "q": "What is the difference between calldata and memory in Solidity?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-712",
+    "eip-1559"
+   ],
+   "topScore": 0.38064912,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q392",
+   "q": "How many transactions per second can Ethereum process?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.44590545,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q393",
+   "q": "Give me a list of the top DeFi protocols by volume.",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-721",
+    "erc-20",
+    "eip-1"
+   ],
+   "topScore": 0.39015907,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q394",
+   "q": "What licence applies if I copy code out of one of these specifications?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "eip-7702",
+    "erc-165"
+   ],
+   "topScore": 0.4516623,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q395",
+   "q": "How do I test my contract against these standards?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-165",
+    "erc-721",
+    "erc-1271",
+    "erc-55"
+   ],
+   "topScore": 0.5208459,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q396",
+   "q": "What is account abstraction on other blockchains?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.6465951,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q397",
+   "q": "Should I use a hardware wallet or a software wallet?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "eip-712",
+    "erc-4337"
+   ],
+   "topScore": 0.2797741,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q398",
+   "q": "How do I estimate gas for a transaction in my dapp?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.5345611,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q399",
+   "q": "What is EIP-4844 and how do blobs work?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "eip-1"
+   ],
+   "topScore": 0.5619166,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q400",
+   "q": "Since ERC-721 tokens are fungible, how do I split one between two owners?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.55919254,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q401",
+   "q": "Since the base fee in EIP-1559 goes to the validator, why do people say ETH is burned?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.6673331,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q402",
+   "q": "Since ERC-165 tells me a contract's return types, can I generate a full ABI from it?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.45045292,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q403",
+   "q": "Since EIP-712 prevents signatures from being replayed, do I still need a nonce?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-712"
+   ],
+   "topScore": 0.59988564,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q404",
+   "q": "Since ERC-1271 lets a contract sign with its private key, how do I get that key?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.5583406,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q405",
+   "q": "Since EIP-7702 turns an EOA into a contract permanently, how do I undo it?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.61224896,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q406",
+   "q": "Since ERC-4337 changed Ethereum's consensus rules, which fork shipped it?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-721",
+    "eip-1",
+    "erc-1155"
+   ],
+   "topScore": 0.43634605,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q407",
+   "q": "Since ERC-1155 replaced ERC-721, is ERC-721 deprecated?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.5595553,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q408",
+   "q": "Since ERC-20's approve function is safe to call repeatedly, why do wallets warn about it?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "eip-7702",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.54704934,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q409",
+   "q": "Since ERC-2771 requires a protocol change, when did it activate?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.5064706,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q410",
+   "q": "Since EIP-55 changes an address's value, do I need to convert before sending?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-55"
+   ],
+   "retrieved": [
+    "erc-55",
+    "erc-1155"
+   ],
+   "topScore": 0.54738265,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q411",
+   "q": "Since every EIP must reach Final, what happens to ones the authors abandon?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.61621606,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q412",
+   "q": "Since supportsInterface returns true for 0xffffffff on compliant contracts, how do I detect ERC-165?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.7593452,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q413",
+   "q": "Since ERC-1155 requires the name and symbol functions, what do I return from them?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20",
+    "erc-721"
+   ],
+   "topScore": 0.5943754,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q414",
+   "q": "Since EIP-1559 gives a fixed gas price per block, why do my fees still vary?",
+   "type": "misconception",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.6839149,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q415",
+   "q": "We're launching a ticketing platform where each ticket is for a specific seat at a specific show. Which standard?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.36199337,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q416",
+   "q": "I run a subscription service and want to charge users monthly from their wallet. What does the token standard support?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-20",
+    "eip-7702"
+   ],
+   "topScore": 0.45440343,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q417",
+   "q": "My users are in a country where buying crypto is hard. Can they use my dapp at all?",
+   "type": "indirect",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.32142454,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q418",
+   "q": "I want a single approval to cover everything a user owns in my game. What does that look like?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.5103443,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q419",
+   "q": "My contract needs to react when it receives tokens. What do I implement?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.5157272,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q420",
+   "q": "We want an audit trail of every item movement for our support team. Which standard guarantees that?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.44113863,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q421",
+   "q": "Our contract needs to know if it is being called by a relayer rather than the user directly.",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "erc-1155",
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.3711684,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q422",
+   "q": "I want users to be able to recover their account if they lose their key. Which approach supports that?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.32215816,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q423",
+   "q": "Can I let a user do an approve and a swap in one click?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.4777494,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q424",
+   "q": "A partner asked whether our token contract supports batch transfers. How would they check programmatically?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155",
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6285123,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q425",
+   "q": "What should my wallet display before a user signs a permit for an unfamiliar contract?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-2771",
+    "erc-1271"
+   ],
+   "topScore": 0.47117248,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q426",
+   "q": "Our multisig needs to place orders on an exchange with an off-chain orderbook. What has to be in place?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271",
+    "eip-712"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-1271",
+    "erc-1155"
+   ],
+   "topScore": 0.4175414,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q427",
+   "q": "I need to sponsor gas but I don't trust the relayer with my users' funds. What are my options?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-2771",
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-2771",
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.41006714,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q428",
+   "q": "Which standard do I need if I only care about my token appearing correctly in wallets?",
+   "type": "product",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "eip-712"
+   ],
+   "topScore": 0.5061003,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q429",
+   "q": "Our game mints thousands of identical items per day. Will separate contracts be a problem?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.4533385,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q430",
+   "q": "What is the difference between the sender and the signature field's owner in a UserOperation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.42413765,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q431",
+   "q": "What is the callData field of a UserOperation for?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.39702567,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q432",
+   "q": "What is preVerificationGas paying for?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.51894355,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q433",
+   "q": "Who receives the fees from a handleOps bundle?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.46780962,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q434",
+   "q": "What does the factory field of 0x7702 signify?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.38409117,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q435",
+   "q": "How is the packed accountGasLimits field laid out?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.44409242,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q436",
+   "q": "What does the postOp function on a paymaster do?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.4991914,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q437",
+   "q": "Why is validateUserOp called with missingAccountFunds of 0 when a paymaster is used?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.62344766,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q438",
+   "q": "What does the value field's absence mean for an EIP-7702 authorization tuple?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.50065106,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q439",
+   "q": "Can a delegation authorization be reused on another chain?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.45975894,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q440",
+   "q": "What stops the same delegation authorization from being replayed on the same chain?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.48044732,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q441",
+   "q": "Can I delegate an account that already has contract code?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.58282626,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q442",
+   "q": "What does the elasticity multiplier do to the gas limit at the fork block?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.41524786,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q443",
+   "q": "What happens to the base fee when a block lands exactly on the gas target?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.57863975,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q444",
+   "q": "Is the base fee increase floor-limited?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.46613097,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q445",
+   "q": "Which sections are mandatory versus optional in an EIP?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-721"
+   ],
+   "topScore": 0.6725496,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q446",
+   "q": "What must the copyright waiver in an EIP say?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "eip-7702",
+    "erc-1155",
+    "erc-165"
+   ],
+   "topScore": 0.65781087,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q447",
+   "q": "How should an EIP reference another EIP the first time?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-4337"
+   ],
+   "topScore": 0.6479238,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q448",
+   "q": "Are external links allowed in an EIP?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.77475667,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q449",
+   "q": "What makes an EIP more likely to succeed, according to the process document?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "eip-7702"
+   ],
+   "topScore": 0.59473133,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q450",
+   "q": "Does every change to Ethereum need an EIP?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-1155"
+   ],
+   "topScore": 0.6268606,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q451",
+   "q": "What should an Abstract section read like?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-165",
+    "erc-4337"
+   ],
+   "topScore": 0.4778329,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q452",
+   "q": "What is the Rationale section supposed to add beyond the specification?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-1155"
+   ],
+   "topScore": 0.54069746,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q453",
+   "q": "Who assigns an EIP its number?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.5925369,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q454",
+   "q": "What style rules apply to an EIP title?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6692382,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q455",
+   "q": "What format must dates use in an EIP header?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6468085,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q456",
+   "q": "When is the last-call-deadline header needed?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.3242916,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q457",
+   "q": "Should a PR that moves an EIP to Final also fix its content?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.57885945,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q458",
+   "q": "Can a Final EIP ever be edited?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6006646,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q459",
+   "q": "What do EIP editors check when a new EIP arrives?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.7400536,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q460",
+   "q": "Is there anything in these standards about how much gas the interface detection call may use during a hybrid token transfer?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155",
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.56946266,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q461",
+   "q": "Which corpus documents give an explicit ordering requirement for calls?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155",
+    "erc-165"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-2771",
+    "erc-1155",
+    "eip-1"
+   ],
+   "topScore": 0.31639588,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q462",
+   "q": "Which documents in this corpus define a singleton contract?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "eip-712",
+    "erc-721",
+    "erc-1155",
+    "eip-1"
+   ],
+   "topScore": 0.38240117,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q463",
+   "q": "Which standard's motivation mentions saving gas by moving work off chain?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-712"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "erc-1155",
+    "eip-712"
+   ],
+   "topScore": 0.42823482,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q464",
+   "q": "Two documents describe a pre-charge and later settlement pattern or an up-front charge with refund. Which?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.3586064,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q465",
+   "q": "Which corpus documents explicitly say part of their design is out of scope?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "erc-2771"
+   ],
+   "retrieved": [
+    "eip-1",
+    "eip-7702",
+    "eip-712"
+   ],
+   "topScore": 0.37649477,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q466",
+   "q": "How do I choose between a mapping and a pure function for interface detection if I only support two interfaces?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.5708694,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q467",
+   "q": "What is the trade-off in the pure supportsInterface implementation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "erc-165"
+   ],
+   "topScore": 0.47069186,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q468",
+   "q": "What is the current price of ETH?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.5048546,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q469",
+   "q": "How do I report a bug in the Ethereum client I'm using?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "erc-721"
+   ],
+   "topScore": 0.37901953,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q470",
+   "q": "What are the tax implications of selling an NFT?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.42920274,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q471",
+   "q": "Explain the EVM's stack and memory model.",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "eip-7702",
+    "eip-1",
+    "eip-712"
+   ],
+   "topScore": 0.38685572,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q472",
+   "q": "How do I choose a good name and ticker for my token?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-1155",
+    "erc-20",
+    "erc-721"
+   ],
+   "topScore": 0.45287037,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q473",
+   "q": "Which layer 2 network is cheapest to deploy on?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1559",
+    "eip-7702"
+   ],
+   "topScore": 0.32564163,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q474",
+   "q": "What is the difference between proof of work and proof of stake?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-4337",
+    "eip-1559"
+   ],
+   "topScore": 0.3562196,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q475",
+   "q": "Give me a Hardhat config for testing these contracts.",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-712",
+    "erc-721",
+    "erc-1155",
+    "erc-55",
+    "eip-7702"
+   ],
+   "topScore": 0.43867904,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q476",
+   "q": "How many EIPs are there in total?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "erc-721"
+   ],
+   "topScore": 0.584435,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q477",
+   "q": "What is the roadmap for the next Ethereum hard fork?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "eip-1559"
+   ],
+   "topScore": 0.4297189,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q478",
+   "q": "Can you review my Solidity code for gas optimizations?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "eip-1559"
+   ],
+   "topScore": 0.37776542,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q479",
+   "q": "What is a DAO and how do I start one?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "erc-721"
+   ],
+   "topScore": 0.38992363,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q480",
+   "q": "What does the multi-token standard's abstract say about how it differs from the NFT standard's id?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.70595205,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q481",
+   "q": "Which corpus document defines a standard for tokens where every unit is interchangeable?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "erc-20"
+   ],
+   "retrieved": [
+    "erc-20",
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.45576453,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q482",
+   "q": "I need to know whether an address is a contract before transferring an NFT to it. Does the standard help?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.48413435,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q483",
+   "q": "Where should test cases live for an EIP?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-165",
+    "erc-721"
+   ],
+   "topScore": 0.66657454,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q484",
+   "q": "How detailed does an EIP's specification have to be?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.681749,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q485",
+   "q": "What three parts does a Standards Track EIP consist of?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.724074,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q486",
+   "q": "Why are EIPs kept as text files in a versioned repository?",
+   "type": "natural",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.6275759,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q487",
+   "q": "Does an ERC-1155 transfer to the zero address mean a burn?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.6054051,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q488",
+   "q": "What must the _operator argument of an ERC-1155 transfer event be?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.653551,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q489",
+   "q": "Can a paymaster refuse to pay for a specific operation?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.5374374,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q490",
+   "q": "Does EIP-7702 let me set arbitrary bytecode directly in my account?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702"
+   ],
+   "topScore": 0.5982747,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q491",
+   "q": "What is the difference between a Gas Relay and a Trusted Forwarder?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "erc-2771"
+   ],
+   "retrieved": [
+    "erc-2771"
+   ],
+   "topScore": 0.5623821,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q492",
+   "q": "Does ERC-1271 tell me how the hash was produced?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271"
+   ],
+   "topScore": 0.49947047,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q493",
+   "q": "What does the fee market change's simple summary say it does?",
+   "type": "technical",
+   "difficulty": "easy",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.54205996,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q494",
+   "q": "Which corpus documents include a formal reference implementation in Python?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-1271",
+    "erc-721",
+    "erc-2771"
+   ],
+   "topScore": 0.27990133,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q495",
+   "q": "Where is the effective gas price defined and what does it equal?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "eip-7702"
+   ],
+   "topScore": 0.46356755,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q496",
+   "q": "How is a legacy transaction normalized under the new fee rules?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.61060804,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q497",
+   "q": "I am told my contract must return a specific four-byte value or transfers will fail. Which standards is that about?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721",
+    "erc-1155",
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "erc-721"
+   ],
+   "topScore": 0.4695829,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q498",
+   "q": "Which corpus document has a Version history section?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.31019437,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 0
+   }
+  },
+  {
+   "id": "q499",
+   "q": "What does the standard say about EIP-1559 and MEV?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1559",
+    "eip-1",
+    "erc-1155",
+    "erc-2771"
+   ],
+   "topScore": 0.582406,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q500",
+   "q": "Can a bundler include two UserOperations from accounts that touch each other?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.60135674,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q501",
+   "q": "Why does ERC-4337 care whether a UserOperation is valid only in isolation?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337"
+   ],
+   "retrieved": [
+    "erc-4337"
+   ],
+   "topScore": 0.57150584,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q502",
+   "q": "What does the corpus say happens if a delegate contract does not check the call target?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-165"
+   ],
+   "topScore": 0.48503387,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q503",
+   "q": "Do I need to worry about storage layout when writing an EIP-7702 delegate?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.63042045,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q504",
+   "q": "Which corpus documents mention a reputation system?",
+   "type": "comparison",
+   "difficulty": "hard",
+   "expected": [
+    "erc-4337",
+    "eip-7702"
+   ],
+   "retrieved": [
+    "erc-4337",
+    "erc-721",
+    "erc-1155",
+    "eip-1"
+   ],
+   "topScore": 0.29007828,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q505",
+   "q": "What does the corpus say about who pays when an authorization is duplicated?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-7702"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "erc-4337"
+   ],
+   "topScore": 0.37256154,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q506",
+   "q": "Which standard would let me verify a signature without knowing whether the signer is a contract or an EOA?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.669216,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q507",
+   "q": "What is the risk if I hardcode gas for a contract signature check in a loop?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-1271"
+   ],
+   "retrieved": [
+    "erc-1271",
+    "eip-7702"
+   ],
+   "topScore": 0.54120797,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q508",
+   "q": "Which corpus documents were authored by Vitalik Buterin?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-20",
+    "erc-55",
+    "eip-1559"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-20"
+   ],
+   "topScore": 0.41981858,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q509",
+   "q": "Which corpus document is the oldest by creation date?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-20"
+   ],
+   "topScore": 0.26086727,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q510",
+   "q": "What status do the documents in this corpus have?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1",
+    "erc-2771",
+    "erc-55"
+   ],
+   "topScore": 0.3106817,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q511",
+   "q": "What does the multi-token standard say about escrow and atomic swaps?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-1155"
+   ],
+   "retrieved": [
+    "erc-1155"
+   ],
+   "topScore": 0.57193196,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q512",
+   "q": "Which corpus document explicitly says its approach was kept as simple as possible?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "erc-165"
+   ],
+   "retrieved": [
+    "eip-7702",
+    "eip-1",
+    "erc-165",
+    "erc-4337"
+   ],
+   "topScore": 0.3289162,
+   "recall": {
+    "1": 0,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q513",
+   "q": "How do I let a user grant a marketplace permission over one specific NFT rather than all of them?",
+   "type": "product",
+   "difficulty": "medium",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-1155",
+    "eip-7702",
+    "erc-721"
+   ],
+   "topScore": 0.4181172,
+   "recall": {
+    "1": 0,
+    "3": 0,
+    "5": 1
+   }
+  },
+  {
+   "id": "q514",
+   "q": "What does the NFT standard say about reaffirming an approval?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.5110918,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q515",
+   "q": "What is a read-only NFT registry and how would I build one?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721"
+   ],
+   "topScore": 0.48407614,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q516",
+   "q": "Is there a standard way to charge a fee on every NFT transfer?",
+   "type": "product",
+   "difficulty": "hard",
+   "expected": [
+    "erc-721"
+   ],
+   "retrieved": [
+    "erc-721",
+    "eip-1559"
+   ],
+   "topScore": 0.51656985,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q517",
+   "q": "Which corpus documents describe a Living or continuously updated artifact?",
+   "type": "technical",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.34468848,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q518",
+   "q": "Can an EIP propose changes to Ethereum's own codebase as a Meta EIP?",
+   "type": "technical",
+   "difficulty": "hard",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.59231603,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q519",
+   "q": "Are users free to ignore an Informational EIP?",
+   "type": "comparison",
+   "difficulty": "medium",
+   "expected": [
+    "eip-1"
+   ],
+   "retrieved": [
+    "eip-1"
+   ],
+   "topScore": 0.55436736,
+   "recall": {
+    "1": 1,
+    "3": 1,
+    "5": 1
+   }
+  },
+  {
+   "id": "q520",
+   "q": "Can you fix the bug in my token contract?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-721",
+    "erc-1155"
+   ],
+   "topScore": 0.4143659,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q521",
+   "q": "What is the gas limit of an Ethereum block right now?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1559"
+   ],
+   "topScore": 0.5328884,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q522",
+   "q": "How do I list my token on an exchange?",
+   "type": "negative",
+   "difficulty": "easy",
+   "expected": [],
+   "retrieved": [
+    "erc-1155",
+    "erc-20"
+   ],
+   "topScore": 0.42944455,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q523",
+   "q": "What is IPFS and should I use it for metadata?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-721",
+    "eip-1",
+    "erc-1155"
+   ],
+   "topScore": 0.4408346,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q524",
+   "q": "Explain how ecrecover works internally.",
+   "type": "negative",
+   "difficulty": "hard",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "eip-1",
+    "erc-2771"
+   ],
+   "topScore": 0.42370296,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q525",
+   "q": "What are the most common smart contract vulnerabilities?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-7702",
+    "eip-712",
+    "eip-1",
+    "erc-721",
+    "erc-4337"
+   ],
+   "topScore": 0.46003395,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q526",
+   "q": "How do I migrate users from an old token contract to a new one?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "erc-1155",
+    "eip-7702",
+    "eip-1"
+   ],
+   "topScore": 0.42825106,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  },
+  {
+   "id": "q527",
+   "q": "Which of these standards is the most widely adopted?",
+   "type": "negative",
+   "difficulty": "medium",
+   "expected": [],
+   "retrieved": [
+    "eip-1",
+    "erc-165",
+    "erc-1155"
+   ],
+   "topScore": 0.4051429,
+   "recall": {
+    "1": null,
+    "3": null,
+    "5": null
+   }
+  }
+ ]
+}
