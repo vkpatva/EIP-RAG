@@ -37,6 +37,8 @@
  * citations exist.
  */
 import { looksLikeRefusal, mapSources } from "./sourceMapper.js";
+import { checkSupport } from "./support.js";
+import type { CheckedSource } from "./support.js";
 import type { RAGResponse } from "./types.js";
 import type { RAGGenerationService } from "../generator/generationService.js";
 import type { Retriever } from "../vectorstore/retriever.js";
@@ -79,7 +81,13 @@ export async function answerQuestion(
   question: string,
   options: AnswerQuestionOptions,
 ): Promise<
-  RAGResponse & {
+  Omit<RAGResponse, "sources"> & {
+    /**
+     * Sources with a support level attached. A superset of `Source`, so this
+     * still satisfies `RAGResponse` structurally — a consumer that ignores
+     * `support` sees exactly the retrieved evidence it saw before.
+     */
+    sources: CheckedSource[];
     chunks: RetrievedChunk[];
     systemPrompt: string;
     userPrompt: string;
@@ -103,11 +111,18 @@ export async function answerQuestion(
   // Stage 2b — generation. Sees the chunks; never sees the sources.
   const generated = await generator.generateDetailed(question, chunks);
 
-  // The join, and the one policy decision that needs both halves in view.
+  // The join, and the two policy decisions that need both halves in view.
+  //
+  // First: suppress everything on a refusal, since a refusal rests on no
+  // evidence at all. Second: mark which of the remaining chunks share a
+  // distinctive term with the answer, so the renderer can separate evidence
+  // the answer demonstrably used from evidence that was merely retrieved.
+  // Both need the answer *and* the sources, which is why they live here
+  // rather than in either branch.
   const sources =
     suppressSourcesOnRefusal && looksLikeRefusal(generated.answer)
       ? []
-      : allSources;
+      : checkSupport(generated.answer, allSources, chunks);
 
   // `chunks` and the two prompt strings are returned alongside rather than
   // added to `RAGResponse`, because they are debugging needs: putting five

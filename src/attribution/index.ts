@@ -1,4 +1,6 @@
 export type { RAGResponse, Source } from "./types.js";
+export { checkSupport, distinctiveTerms } from "./support.js";
+export type { CheckedSource, SupportLevel } from "./support.js";
 export {
   looksLikeRefusal,
   mapSources,

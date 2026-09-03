@@ -13,6 +13,7 @@
  * owns the console, so this is testable by comparing strings.
  */
 import { sourceLabel } from "./sourceMapper.js";
+import type { CheckedSource } from "./support.js";
 import type { RAGResponse, Source } from "./types.js";
 import type { RetrievedChunk } from "../vectorstore/types.js";
 
@@ -103,20 +104,52 @@ function formatSource(source: Source): string {
   // retriever, and a 0 would read as "maximally dissimilar".
   lines.push(`    Score: ${formatScore(source.score).trim()}`);
 
+  // The matched terms, when known. This is the line that makes the citation
+  // checkable without leaving the terminal: "Quotes: transferFrom, allowance"
+  // says which strings in the answer came out of this chunk.
+  if (isChecked(source) && source.quoted.length > 0) {
+    const shown = source.quoted.slice(0, 6).join(", ");
+    const more =
+      source.quoted.length > 6 ? ` (+${source.quoted.length - 6} more)` : "";
+    lines.push(`    Quotes: ${shown}${more}`);
+  }
+
   return lines.join("\n");
+}
+
+/** A `Source` that has been through `checkSupport`. */
+function isChecked(source: Source): source is CheckedSource {
+  return "support" in source;
 }
 
 /**
  * The SOURCES section.
  *
- * The empty case is the interesting one. "None" is printed with the retrieval
- * count beside it, because those are two different facts and collapsing them
- * hides the more useful one: "Sources: None" alone reads as "retrieval found
- * nothing", while "None (5 chunks retrieved, none cited)" says what actually
- * happened — retrieval worked, the evidence did not support an answer. The
- * first sends you to debug the retriever; the second tells you the corpus has
- * a gap. That distinction is the same one rule 4 of `SYSTEM_PROMPT` asks the
- * model to make in prose.
+ * Two things are separated here, because they are two different claims and
+ * one heading was making the stronger one on the weaker one's evidence:
+ *
+ *  - **SOURCES** — chunks that share a distinctive term with the answer.
+ *    These are the ones the answer demonstrably drew on, so a reader checking
+ *    a signature will find it there.
+ *  - **ALSO RETRIEVED** — chunks that were sent to the model with no such
+ *    term found. Listed compactly, below, under a heading that does not claim
+ *    they supported anything.
+ *
+ * The second list is kept rather than dropped, and the reason is a limit of
+ * the check rather than a preference. A shared identifier is proof a chunk
+ * *was* drawn on; its absence is not proof a chunk was not, because a
+ * paraphrasing answer shares no exact strings with its source. Deleting those
+ * chunks would replace an overclaim ("all ten supported this") with a
+ * different overclaim ("only these two were involved"), and would also hide
+ * the retrieval problem that put eight unhelpful chunks in the context window
+ * — which is a thing worth seeing, not hiding.
+ *
+ * The empty case: "None" is printed with the retrieval count beside it,
+ * because those are two different facts and collapsing them hides the more
+ * useful one. "Sources: None" alone reads as "retrieval found nothing", while
+ * "None (5 chunks retrieved, none cited)" says retrieval worked and the
+ * evidence did not support an answer. The first sends you to debug the
+ * retriever; the second says the corpus has a gap.
  */
 export function formatSources(response: RAGResponse): string {
   if (response.sources.length === 0) {
@@ -129,7 +162,59 @@ export function formatSources(response: RAGResponse): string {
     return `SOURCES: None\n${note}`;
   }
 
-  return `SOURCES:\n\n${response.sources.map(formatSource).join("\n\n")}`;
+  const checked = response.sources.filter(isChecked);
+
+  // No support information available — either the sources were never checked
+  // or the answer had nothing checkable in it. Fall back to one flat list,
+  // since splitting it would imply a distinction that was never computed.
+  if (checked.length !== response.sources.length) {
+    return `SOURCES:\n\n${response.sources.map(formatSource).join("\n\n")}`;
+  }
+  if (checked.every((source) => source.support === "unchecked")) {
+    return (
+      `SOURCES (support not checked — the answer quotes no identifiers):\n\n` +
+      checked.map(formatSource).join("\n\n")
+    );
+  }
+
+  const supported = checked.filter((source) => source.support === "quoted");
+  const rest = checked.filter((source) => source.support !== "quoted");
+
+  const blocks: string[] = [];
+
+  if (supported.length > 0) {
+    blocks.push(
+      `SOURCES (${supported.length} of ${checked.length} retrieved chunks ` +
+        `contain text the answer uses):\n\n` +
+        supported.map(formatSource).join("\n\n"),
+    );
+  } else {
+    // Every chunk failed the check. Worth saying loudly rather than printing
+    // an empty heading: an answer full of signatures none of whose chunks
+    // contain them came from training weights, which is the exact failure
+    // synthesis rule 2 forbids and cannot itself enforce.
+    blocks.push(
+      `SOURCES: none of the ${checked.length} retrieved chunks contain text ` +
+        `the answer uses.\n` +
+        `  The answer may not be grounded in the retrieved evidence.`,
+    );
+  }
+
+  if (rest.length > 0) {
+    const lines = rest.map(
+      (source) =>
+        `  [${source.citationId}] ${sourceLabel(source)}` +
+        `${source.section ? ` · ${source.section}` : ""}` +
+        `  (${source.chunkId})`,
+    );
+    blocks.push(
+      `ALSO RETRIEVED (${rest.length} chunk${
+        rest.length === 1 ? "" : "s"
+      } sent to the model; no quoted text found):\n` + lines.join("\n"),
+    );
+  }
+
+  return blocks.join("\n\n");
 }
 
 /**

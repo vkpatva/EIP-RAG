@@ -119,7 +119,8 @@ src/retrieve.ts   dev script: Top-K retrieval against Qdrant
 src/eval-retrieval.ts dev script: Recall@K over the labelled set
 src/generator/    types.ts, prompt.ts, openai.ts, generationService.ts, index.ts
 src/generate.ts   dev script: retrieve + generate, end to end
-src/attribution/  types.ts, sourceMapper.ts, render.ts, pipeline.ts, index.ts
+src/attribution/  types.ts, sourceMapper.ts, support.ts, render.ts,
+                  pipeline.ts, index.ts
 src/ask.ts        dev script: the attributed pipeline (answer + sources)
 src/verify-attribution.ts dev script: assert no source was fabricated
 src/experiment-context.ts dev script: retrieval quality vs. answer quality
@@ -1052,6 +1053,110 @@ That check is mechanical and cheap — extract `function \w+\(` from the answer,
 require each to appear in some cited chunk's text — and it belongs in the
 faithfulness eval, not here.
 
+### Retrieved is not the same as used
+
+A source list built from `mapSources` is every chunk that was *retrieved*.
+That is true, but the `SOURCES` heading reads as "the evidence behind this
+answer", and a chunk the model read and ignored is not that. On a real run of
+"what are functions required in ERC20" at K=10, four ERC-1155 chunks were
+cited beside the nine ERC-20 signatures they had nothing to do with — and so
+were four EIP-20 chunks (`Implementation`, `Simple Summary`,
+`Example implementations are available at`) that contained no signature
+either. Eight of ten citations attributed the answer to evidence that did not
+support it.
+
+Three obvious filters were considered and rejected, each for a reason visible
+in that run:
+
+- **By document.** It needs the question's subject parsed from its wording,
+  and it breaks the ERC-721 vs ERC-1155 comparison, where a multi-document
+  list is correct. It would also have removed only half the noise here, since
+  most of it was EIP-20's own off-topic sections.
+- **By score.** The top ERC-1155 chunk scored 0.5459 while
+  `Methods (overview)` — the one chunk holding the whole answer — scored
+  0.5339, and the `allowance` chunk that also supported it had no score at
+  all, being a BM25-only hit. Any threshold keeps the noise and drops the
+  signal.
+- **By asking the model.** Its list would be a prediction, which is the
+  fabrication this module exists to remove.
+
+What is used instead (`attribution/support.ts`) is a question with a
+yes-or-no answer: does this chunk's text literally contain a distinctive
+string the answer used? That is `String.includes` over text both sides
+already hold — deterministic, free, and impossible to fabricate, the same
+properties that make `mapSources` trustworthy. Two kinds of match count:
+
+- **A whole signature, verbatim** — `allowance(address _owner, address
+  _spender)`. Decisive on its own, because parameter names are exactly what a
+  model reconstructing from training weights gets wrong: `_owner` becomes
+  `owner`, `_value` becomes `amount`. An exact match is evidence of copying
+  rather than recall.
+- **Two or more distinctive identifiers** — camelCase or ALLCAPS names like
+  `onERC1155Received` or `INTERFACE_ID`. Two, not one, because in a corpus
+  where every token standard discusses every other, one shared term is a
+  coincidence.
+
+The output splits accordingly:
+
+```
+SOURCES (3 of 10 retrieved chunks contain text the answer uses):
+
+[3] EIP-20 — Token Standard
+    Section: Methods (overview)
+    Quotes: returns (string), returns (uint8), balanceOf(address _owner) (+5 more)
+
+[5] EIP-20 — Token Standard
+    Section: allowance
+    Quotes: allowance(address _owner, address _spender), returns (uint256 remaining)
+
+ALSO RETRIEVED (7 chunks sent to the model; no quoted text found):
+  [2] EIP-1155 — Multi Token Standard · Backwards Compatibility  (…:63)
+  [4] EIP-20 — Token Standard · Simple Summary  (…:0)
+```
+
+`Quotes:` is the line that makes a citation checkable without leaving the
+terminal — it names which strings in the answer came out of that chunk.
+
+The demoted chunks are kept, not deleted, and the reason is a limit of the
+check rather than a preference. **A shared signature proves a chunk was used;
+its absence proves nothing**, because an answer that paraphrases shares no
+exact strings with its source. Deleting them would trade one overclaim ("all
+ten supported this") for another ("only these three were involved"), and would
+hide the retrieval problem that put seven unhelpful chunks in the context
+window. Precision at K=10 was 30% on that query; that is worth seeing.
+
+Three calibration bugs, all found by running it, all worth recording because
+each was the check overclaiming in a different direction:
+
+1. **`transfer` and `approve` had to become stopwords.** The first version
+   marked every ERC-1155 chunk "supported" in a run about ERC-20, because
+   ERC-1155's backwards-compatibility section discusses ERC-20's `transfer` at
+   length. A term is only evidence if its appearance in both places would be a
+   coincidence.
+2. **Capitalised words are not identifiers.** Accepting any capitalised token
+   matched `Some` and `Specifically` out of an English sentence — enough
+   "terms" to trip the checkable threshold while matching nothing, so a
+   well-grounded EIP-55 answer was reported as possibly ungrounded. An
+   internal capital or underscore is now required.
+3. **Signatures must count toward checkability.** Gating on prose identifiers
+   alone declared an answer of nine bare signatures unverifiable, since every
+   ERC-20 method name is a stopword. The most checkable answer in the corpus
+   was the one being skipped.
+
+So an answer with too little quotable material is reported as **unchecked**,
+not unsupported: `SOURCES (support not checked — the answer quotes no
+identifiers)`. The check declines to render a verdict it cannot support, which
+is the standard the rest of this module is held to.
+
+This is not a faithfulness check. It shows a chunk contains text the answer
+reproduced; it cannot show the answer's *claims* follow from the evidence, and
+it says nothing about paraphrase. It is a cheap mechanical lower bound on
+"was this chunk used", and it does one genuinely useful thing beyond tidying
+the output: an answer full of signatures none of whose chunks contain them
+prints `none of the N retrieved chunks contain text the answer uses`, which is
+the training-weights synthesis that synthesis rule 2 forbids and cannot itself
+enforce.
+
 ### Version A and Version B
 
 What is built is **Version A**: one source list for the whole answer.
@@ -1280,10 +1385,13 @@ byte-for-byte. Worth re-checking after any splitter change.
   the gap loses sources it was entitled to. Both are visible in
   `npm run verify:attribution` because invariant 4 compares the two branches, and
   the fix for a miss is to add the phrasing rather than to start scoring relevance.
-- **A displayed source is evidence that was retrieved, not evidence that was
-  used.** The model may have ignored chunk 5 entirely, and the list looks
-  identical either way. This is inherent to Version A and is why `score` is
-  presented as a retrieval diagnostic rather than as support for the answer.
+- **A displayed source is evidence that was retrieved; "used" is only a lower
+  bound.** `checkSupport` proves a chunk was drawn on when the answer quotes a
+  signature or two distinctive identifiers from it, and proves nothing
+  otherwise — a paraphrasing answer shares no exact strings with its source.
+  So `ALSO RETRIEVED` means "no quoted text found", not "unused", and an
+  answer with little quotable material is reported as unchecked. `score`
+  remains a retrieval diagnostic, never a claim of support.
 - **`sourcePath` is a path, not a link.** Deriving a URL needs a repository,
   branch and heading-anchor convention that does not exist yet, so a reader
   verifies by opening the local file. The field is the seed for it.
