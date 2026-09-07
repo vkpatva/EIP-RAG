@@ -4,6 +4,7 @@
  *   npm run generate                            the built-in probe set
  *   npm run generate -- "What is EIP-712?"
  *   npm run generate -- --k=5
+ *   npm run generate -- --dense                 dense-only (hybrid is default)
  *   npm run generate -- --show-prompt           print what was sent to the LLM
  *   npm run generate -- --in=data/embeddings-voyage.json
  *   npm run generate -- --interval=25000        pace queries (rate limits)
@@ -21,6 +22,11 @@ import {
   OpenAIChatProvider,
   RAGGenerationService,
 } from "./generator/index.js";
+// Shared with `npm run ask`, deliberately. These two scripts printing the
+// same retrieval block from two copies of the code is how they drifted apart
+// in the first place — one grew a flag default the other did not, and the
+// same question produced answers that looked like a bug in one of them.
+import { formatRetrieval } from "./attribution/index.js";
 
 /**
  * A probe set chosen to exercise different generation behaviours: a direct
@@ -38,34 +44,6 @@ const DEFAULT_QUERIES = [
   "Who invented Ethereum?",
 ];
 
-/** Scores are absent for lexical-only hits under hybrid retrieval. */
-function fmtScore(score: number | undefined): string {
-  return score === undefined ? "  --  " : score.toFixed(4);
-}
-
-/**
- * Summarise the dense scores present in a result set.
- *
- * Spread over *scored* hits only. Mixing in a lexical-only hit as 0 made the
- * spread equal the top score, which looked like perfect discrimination when
- * it meant the opposite. Under hybrid the ranking is RRF's, so these numbers
- * are diagnostic rather than the ordering — a low spread still says the dense
- * half matched a theme rather than a passage.
- */
-function scoreSummary(hits: Array<{ score?: number }>): string {
-  const scored = hits
-    .map((h) => h.score)
-    .filter((s): s is number => s !== undefined);
-  if (scored.length === 0) return "  no dense scores (all lexical-only hits)";
-
-  const top = Math.max(...scored);
-  const spread = top - Math.min(...scored);
-  const lexical = hits.length - scored.length;
-  const note = lexical > 0 ? ` · ${lexical} lexical-only` : "";
-  return `  top ${top.toFixed(4)} · spread ${spread.toFixed(4)}` +
-    ` (over ${scored.length} scored)${note}`;
-}
-
 function flag(name: string, fallback: string): string {
   return (
     process.argv.find((a) => a.startsWith(`--${name}=`))?.split("=")[1] ??
@@ -75,7 +53,13 @@ function flag(name: string, fallback: string): string {
 
 const inPath = flag("in", "data/embeddings.json");
 const modeFlag = flag("mode", "auto") as "extraction" | "synthesis" | "auto";
-const hybrid = process.argv.includes("--hybrid");
+// Hybrid by default, matching `npm run ask`. It was opt-in while the dense
+// baseline was the thing being measured against; now that hybrid is the
+// evaluated configuration (88% R@5), an opt-in flag meant the two scripts
+// silently retrieved different chunks for the same question and produced
+// answers that looked like a bug in one of them. `--dense` still selects the
+// baseline, and `--hybrid` is accepted so existing invocations keep working.
+const hybrid = !process.argv.includes("--dense");
 const rrfK = Number(flag("rrf-k", "2"));
 const bm25Weight = Number(flag("bm25-weight", "0.5"));
 const k = Number(flag("k", "5"));
@@ -120,30 +104,11 @@ try {
     // Stage 1 — retrieval. No LLM involved; ends with text.
     const hits = await retriever.retrieve(question, k);
 
-    console.log(`RETRIEVED (${hits.length} chunks):`);
-    for (const [i, hit] of hits.entries()) {
-      const eip = hit.metadata.eipNumber
-        ? `EIP-${hit.metadata.eipNumber}`
-        : "-";
-      // Under hybrid, which retriever found a chunk is the first thing you
-      // want when a hit looks wrong: "bm25" alone on an off-topic chunk means
-      // the query shared a rare-looking term with it and nothing more.
-      const via = hit.retrievedBy
-        ? `  [${Object.keys(hit.retrievedBy).join("+")}]`
-        : "";
-      console.log(
-        `  [${i + 1}] ${fmtScore(hit.score)}  ${eip}  ` +
-          `${hit.metadata.section ?? "-"}  (${hit.chunkId})${via}`,
-      );
-      console.log(
-        `      ${hit.text.trim().replace(/\s+/g, " ").slice(0, chars)}...`,
-      );
-    }
-
-    // The spread says whether the ranking discriminated or just handed back
-    // the corpus in near-arbitrary order — a flat spread on a high top score
-    // usually means the query matched a theme, not a passage.
-    if (hits.length > 0) console.log(scoreSummary(hits));
+    // The block includes the score spread, which says whether the ranking
+    // discriminated or just handed back the corpus in near-arbitrary order —
+    // a flat spread on a high top score usually means the query matched a
+    // theme, not a passage.
+    console.log(formatRetrieval(hits, chars));
     console.log();
 
     // Stage 2 — generation. Knows only the question and the chunks.
